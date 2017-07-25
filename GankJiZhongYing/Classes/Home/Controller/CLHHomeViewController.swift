@@ -75,10 +75,13 @@ extension CLHHomeViewController: UITableViewDelegate, UITableViewDataSource{
 //        cell.backgroundColor = .red
         let model = CLHHomeModel(id: "x", desc: "hello world   hello world hello world hello world", publishedAt: "x", type: "xx", author: "AnICoo1", url: "xx")
         cell.homeGank = model
+        print(model)
         cell.indexPath = indexPath
         //全文按钮点击回调事件
         cell.moreButtonClickHandler = { [unowned self] (indexPath: IndexPath) in
-            
+            model.isOpen = !model.isOpen
+            print(model.isOpen)
+            self.tableView.reloadRows(at: [indexPath], with: .fade)
         }
         return cell
     }

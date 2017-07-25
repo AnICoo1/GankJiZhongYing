@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SwiftyJSON
 
 let lineHeight: CGFloat = 1
 let nameLabelHeight: CGFloat  = 10
@@ -47,6 +48,31 @@ class CLHHomeModel: NSObject {
         }
         return _cellHeight!
     }
+    convenience  init(dict: JSON) {
+        self.init()
+        for (index, subJson) : (String, JSON) in dict {
+            switch index {
+            case "_id":
+                self.id = subJson.string
+            case "desc":
+                self.desc = subJson.string
+            case "publishedAt":
+                self.publishedAt = subJson.string
+            case "url":
+                self.url = subJson.string
+            case "type":
+                self.type = subJson.string
+            case "":
+                self.author = subJson.string
+            default: break
+            }
+        }
+        
+        // 时间处理
+        let time = self.publishedAt! as NSString
+        self.publishedAt = time.substring(to: 10) as String
+    }
+    
     convenience init(id: String, desc: String, publishedAt: String, type: String, author: String, url: String) {
         self.init()
         self.id = id

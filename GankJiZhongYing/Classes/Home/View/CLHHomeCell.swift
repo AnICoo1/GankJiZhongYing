@@ -27,7 +27,18 @@ class CLHHomeCell: UITableViewCell {
             nameButton.setTitle(homeGank.author, for: .normal)
             contentLabel.text = homeGank.desc
             
+            print(homeGank.isOpen)
+            if homeGank.isOpen {
+                moreButton.setTitle("收起", for: .normal)
+                contentLabel.numberOfLines = 3
+            } else {
+                moreButton.setTitle("全文", for: .normal)
+                contentLabel.numberOfLines = 0
+            }
+            
             dataButton.setTitle(homeGank.publishedAt, for: .normal)
+            
+            
         }
     }
     
@@ -51,7 +62,7 @@ class CLHHomeCell: UITableViewCell {
     
     lazy var contentLabel: UILabel = {
        let label = UILabel()
-        label.text = "hello worldhello worldhello worldhello worldhello worldhello worldhello world"
+        //label.text = "hello worldhello worldhello worldhello worldhello worldhello worldhello world"
         label.numberOfLines = 0
         label.font = UIFont.boldSystemFont(ofSize: 15.0)
         label.textColor = RGBColor(r: 47.0, g: 47.0, b: 47.0, alpha: 1.0)
@@ -64,7 +75,6 @@ class CLHHomeCell: UITableViewCell {
         let btn = UIButton(type: .custom)
         btn.setTitleColor(UIColorTextBlue, for: .normal)
         btn.setTitle("全文", for: .normal)
-        btn.setTitle("收起", for: .selected)
         btn.backgroundColor = .yellow
         btn.addTarget(self, action: #selector(moreButtonClick(button:)), for: .touchUpInside)
         self.contentView.addSubview(btn)
@@ -73,7 +83,7 @@ class CLHHomeCell: UITableViewCell {
     
     lazy var dataButton: UIButton = {
         let btn = UIButton(type: .custom)
-        btn.setTitle("2017-07-24", for: .normal)
+        //btn.setTitle("2017-07-24", for: .normal)
         btn.setImage(UIImage(named: "icon_time.png") , for: .normal)
         btn.setTitleColor(UIColor.lightGray, for: .normal)
         btn.titleLabel?.font = UIFont.boldSystemFont(ofSize: 12.0)
@@ -87,9 +97,9 @@ class CLHHomeCell: UITableViewCell {
         self.selectionStyle = .none
         self.isUserInteractionEnabled = true
         setUpAll()
-        nameButton.setTitle("AnICoo1", for: .normal)
-        contentLabel.text = "hello worldxxxxxxxx"
-        dataButton.setTitle("xxxxxx", for: .normal)
+        //nameButton.setTitle("AnICoo1", for: .normal)
+        //contentLabel.text = "hello worldxxxxxxxx"
+        //dataButton.setTitle("xxxxxx", for: .normal)
     }
     
     required init?(coder aDecoder: NSCoder) {
