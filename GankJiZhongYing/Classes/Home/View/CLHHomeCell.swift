@@ -27,6 +27,7 @@ class CLHHomeCell: UITableViewCell {
         btn.setTitleColor(RGBColor(r: 47.0, g: 47.0, b: 47.0, alpha: 1.0), for: .normal)
         btn.titleLabel?.font = UIFont.boldSystemFont(ofSize: 12.0)
         print("test")
+        print("tessttest")
         return btn
     }()
     
