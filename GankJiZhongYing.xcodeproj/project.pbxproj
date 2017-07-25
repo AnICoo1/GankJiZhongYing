@@ -1,0 +1,593 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		81F1087E340CF2640B0A475C /* Pods_GankJiZhongYing.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 33C46A8FBF674C34698B617D /* Pods_GankJiZhongYing.framework */; };
+		BA1051551F257BC300AF9E59 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA1051541F257BC300AF9E59 /* AppDelegate.swift */; };
+		BA10515A1F257BC300AF9E59 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BA1051581F257BC300AF9E59 /* Main.storyboard */; };
+		BA10515C1F257BC300AF9E59 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BA10515B1F257BC300AF9E59 /* Assets.xcassets */; };
+		BA10515F1F257BC300AF9E59 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BA10515D1F257BC300AF9E59 /* LaunchScreen.storyboard */; };
+		BA1051771F2588C000AF9E59 /* CLHConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA1051761F2588C000AF9E59 /* CLHConfig.swift */; };
+		BA1051791F258ADE00AF9E59 /* CLHTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA1051781F258ADE00AF9E59 /* CLHTabBarViewController.swift */; };
+		BA10517B1F258CAB00AF9E59 /* CLHHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA10517A1F258CAB00AF9E59 /* CLHHomeViewController.swift */; };
+		BA10517D1F258CB800AF9E59 /* CLHGankViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA10517C1F258CB800AF9E59 /* CLHGankViewController.swift */; };
+		BA10517F1F258CBF00AF9E59 /* CLHMineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA10517E1F258CBF00AF9E59 /* CLHMineViewController.swift */; };
+		BA1051811F258DD900AF9E59 /* CLHBaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA1051801F258DD900AF9E59 /* CLHBaseViewController.swift */; };
+		BA1051841F25937200AF9E59 /* CLHHeaderIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA1051831F25937200AF9E59 /* CLHHeaderIView.swift */; };
+		BA1051861F25959A00AF9E59 /* CLHNavBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA1051851F25959A00AF9E59 /* CLHNavBar.swift */; };
+		BA1051891F2596CC00AF9E59 /* CLH+UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA1051881F2596CC00AF9E59 /* CLH+UIView.swift */; };
+		BA10518D1F2597AF00AF9E59 /* CLHExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA10518C1F2597AF00AF9E59 /* CLHExtension.swift */; };
+		BA10518F1F2599B700AF9E59 /* CLHSearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA10518E1F2599B700AF9E59 /* CLHSearchView.swift */; };
+		BA1051911F25C5E500AF9E59 /* CLHHomeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA1051901F25C5E500AF9E59 /* CLHHomeCell.swift */; };
+		BA1051941F25D90400AF9E59 /* CLHNetworking.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA1051931F25D90400AF9E59 /* CLHNetworking.swift */; };
+		BA1051981F25DFE100AF9E59 /* CLHHomeGroupModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA1051971F25DFE100AF9E59 /* CLHHomeGroupModel.swift */; };
+		BA10519A1F25DFF000AF9E59 /* CLHHomeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA1051991F25DFF000AF9E59 /* CLHHomeModel.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		33C46A8FBF674C34698B617D /* Pods_GankJiZhongYing.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GankJiZhongYing.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BA1051511F257BC300AF9E59 /* GankJiZhongYing.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GankJiZhongYing.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		BA1051541F257BC300AF9E59 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		BA1051591F257BC300AF9E59 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		BA10515B1F257BC300AF9E59 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		BA10515E1F257BC300AF9E59 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		BA1051601F257BC300AF9E59 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BA1051761F2588C000AF9E59 /* CLHConfig.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CLHConfig.swift; sourceTree = "<group>"; };
+		BA1051781F258ADE00AF9E59 /* CLHTabBarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CLHTabBarViewController.swift; sourceTree = "<group>"; };
+		BA10517A1F258CAB00AF9E59 /* CLHHomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CLHHomeViewController.swift; sourceTree = "<group>"; };
+		BA10517C1F258CB800AF9E59 /* CLHGankViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CLHGankViewController.swift; sourceTree = "<group>"; };
+		BA10517E1F258CBF00AF9E59 /* CLHMineViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CLHMineViewController.swift; sourceTree = "<group>"; };
+		BA1051801F258DD900AF9E59 /* CLHBaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CLHBaseViewController.swift; sourceTree = "<group>"; };
+		BA1051821F25930800AF9E59 /* CLHGank-Bridge.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CLHGank-Bridge.h"; sourceTree = "<group>"; };
+		BA1051831F25937200AF9E59 /* CLHHeaderIView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CLHHeaderIView.swift; sourceTree = "<group>"; };
+		BA1051851F25959A00AF9E59 /* CLHNavBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CLHNavBar.swift; sourceTree = "<group>"; };
+		BA1051881F2596CC00AF9E59 /* CLH+UIView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CLH+UIView.swift"; sourceTree = "<group>"; };
+		BA10518C1F2597AF00AF9E59 /* CLHExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CLHExtension.swift; sourceTree = "<group>"; };
+		BA10518E1F2599B700AF9E59 /* CLHSearchView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CLHSearchView.swift; sourceTree = "<group>"; };
+		BA1051901F25C5E500AF9E59 /* CLHHomeCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CLHHomeCell.swift; sourceTree = "<group>"; };
+		BA1051931F25D90400AF9E59 /* CLHNetworking.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CLHNetworking.swift; sourceTree = "<group>"; };
+		BA1051971F25DFE100AF9E59 /* CLHHomeGroupModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CLHHomeGroupModel.swift; sourceTree = "<group>"; };
+		BA1051991F25DFF000AF9E59 /* CLHHomeModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CLHHomeModel.swift; sourceTree = "<group>"; };
+		C3CB42EC9D36ED5870B4A7D7 /* Pods-GankJiZhongYing.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GankJiZhongYing.release.xcconfig"; path = "Pods/Target Support Files/Pods-GankJiZhongYing/Pods-GankJiZhongYing.release.xcconfig"; sourceTree = "<group>"; };
+		CC8A1286430E7F8BE9F086F4 /* Pods-GankJiZhongYing.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GankJiZhongYing.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GankJiZhongYing/Pods-GankJiZhongYing.debug.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		BA10514E1F257BC300AF9E59 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				81F1087E340CF2640B0A475C /* Pods_GankJiZhongYing.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		54467916B4A68FA5D5E69649 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				33C46A8FBF674C34698B617D /* Pods_GankJiZhongYing.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		761FBD3C2DCE15023C54AFF8 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				CC8A1286430E7F8BE9F086F4 /* Pods-GankJiZhongYing.debug.xcconfig */,
+				C3CB42EC9D36ED5870B4A7D7 /* Pods-GankJiZhongYing.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		BA1051481F257BC300AF9E59 = {
+			isa = PBXGroup;
+			children = (
+				BA1051531F257BC300AF9E59 /* GankJiZhongYing */,
+				BA1051521F257BC300AF9E59 /* Products */,
+				761FBD3C2DCE15023C54AFF8 /* Pods */,
+				54467916B4A68FA5D5E69649 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		BA1051521F257BC300AF9E59 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				BA1051511F257BC300AF9E59 /* GankJiZhongYing.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		BA1051531F257BC300AF9E59 /* GankJiZhongYing */ = {
+			isa = PBXGroup;
+			children = (
+				BA1051731F2587D600AF9E59 /* Base */,
+				BA1051661F2587CF00AF9E59 /* Classes */,
+				BA1051751F2587FB00AF9E59 /* Main */,
+				BA1051871F2596B600AF9E59 /* Extension */,
+				BA1051741F2587E100AF9E59 /* Others */,
+				BA1051921F25D8F200AF9E59 /* CLHNetworking */,
+				BA1051541F257BC300AF9E59 /* AppDelegate.swift */,
+				BA1051761F2588C000AF9E59 /* CLHConfig.swift */,
+				BA1051581F257BC300AF9E59 /* Main.storyboard */,
+				BA10515B1F257BC300AF9E59 /* Assets.xcassets */,
+				BA10515D1F257BC300AF9E59 /* LaunchScreen.storyboard */,
+				BA1051601F257BC300AF9E59 /* Info.plist */,
+				BA1051821F25930800AF9E59 /* CLHGank-Bridge.h */,
+			);
+			path = GankJiZhongYing;
+			sourceTree = "<group>";
+		};
+		BA1051661F2587CF00AF9E59 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				BA10516B1F2587CF00AF9E59 /* Home */,
+				BA1051671F2587CF00AF9E59 /* Gank */,
+				BA10516F1F2587CF00AF9E59 /* Mine */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		BA1051671F2587CF00AF9E59 /* Gank */ = {
+			isa = PBXGroup;
+			children = (
+				BA1051681F2587CF00AF9E59 /* Controller */,
+				BA1051691F2587CF00AF9E59 /* Model */,
+				BA10516A1F2587CF00AF9E59 /* View */,
+			);
+			path = Gank;
+			sourceTree = "<group>";
+		};
+		BA1051681F2587CF00AF9E59 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				BA10517C1F258CB800AF9E59 /* CLHGankViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		BA1051691F2587CF00AF9E59 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		BA10516A1F2587CF00AF9E59 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		BA10516B1F2587CF00AF9E59 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				BA10516C1F2587CF00AF9E59 /* Controller */,
+				BA10516D1F2587CF00AF9E59 /* Model */,
+				BA10516E1F2587CF00AF9E59 /* View */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		BA10516C1F2587CF00AF9E59 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				BA10517A1F258CAB00AF9E59 /* CLHHomeViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		BA10516D1F2587CF00AF9E59 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				BA1051971F25DFE100AF9E59 /* CLHHomeGroupModel.swift */,
+				BA1051991F25DFF000AF9E59 /* CLHHomeModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		BA10516E1F2587CF00AF9E59 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				BA1051831F25937200AF9E59 /* CLHHeaderIView.swift */,
+				BA1051851F25959A00AF9E59 /* CLHNavBar.swift */,
+				BA10518E1F2599B700AF9E59 /* CLHSearchView.swift */,
+				BA1051901F25C5E500AF9E59 /* CLHHomeCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		BA10516F1F2587CF00AF9E59 /* Mine */ = {
+			isa = PBXGroup;
+			children = (
+				BA1051701F2587CF00AF9E59 /* Controller */,
+				BA1051711F2587CF00AF9E59 /* Model */,
+				BA1051721F2587CF00AF9E59 /* View */,
+			);
+			path = Mine;
+			sourceTree = "<group>";
+		};
+		BA1051701F2587CF00AF9E59 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				BA10517E1F258CBF00AF9E59 /* CLHMineViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		BA1051711F2587CF00AF9E59 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		BA1051721F2587CF00AF9E59 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		BA1051731F2587D600AF9E59 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				BA1051781F258ADE00AF9E59 /* CLHTabBarViewController.swift */,
+				BA1051801F258DD900AF9E59 /* CLHBaseViewController.swift */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		BA1051741F2587E100AF9E59 /* Others */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Others;
+			sourceTree = "<group>";
+		};
+		BA1051751F2587FB00AF9E59 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		BA1051871F2596B600AF9E59 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				BA1051881F2596CC00AF9E59 /* CLH+UIView.swift */,
+				BA10518C1F2597AF00AF9E59 /* CLHExtension.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		BA1051921F25D8F200AF9E59 /* CLHNetworking */ = {
+			isa = PBXGroup;
+			children = (
+				BA1051931F25D90400AF9E59 /* CLHNetworking.swift */,
+			);
+			path = CLHNetworking;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		BA1051501F257BC300AF9E59 /* GankJiZhongYing */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BA1051631F257BC300AF9E59 /* Build configuration list for PBXNativeTarget "GankJiZhongYing" */;
+			buildPhases = (
+				A0EE6161A4081099CB358A3E /* [CP] Check Pods Manifest.lock */,
+				BA10514D1F257BC300AF9E59 /* Sources */,
+				BA10514E1F257BC300AF9E59 /* Frameworks */,
+				BA10514F1F257BC300AF9E59 /* Resources */,
+				4F6DCFB8BE9E7803AC97553E /* [CP] Embed Pods Frameworks */,
+				FDA98A9F47B5C6CC954EA6D0 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = GankJiZhongYing;
+			productName = GankJiZhongYing;
+			productReference = BA1051511F257BC300AF9E59 /* GankJiZhongYing.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		BA1051491F257BC300AF9E59 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = CLH;
+				LastSwiftUpdateCheck = 0830;
+				LastUpgradeCheck = 0830;
+				ORGANIZATIONNAME = AnICoo1;
+				TargetAttributes = {
+					BA1051501F257BC300AF9E59 = {
+						CreatedOnToolsVersion = 8.3.3;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = BA10514C1F257BC300AF9E59 /* Build configuration list for PBXProject "GankJiZhongYing" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = BA1051481F257BC300AF9E59;
+			productRefGroup = BA1051521F257BC300AF9E59 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				BA1051501F257BC300AF9E59 /* GankJiZhongYing */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		BA10514F1F257BC300AF9E59 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BA10515F1F257BC300AF9E59 /* LaunchScreen.storyboard in Resources */,
+				BA10515C1F257BC300AF9E59 /* Assets.xcassets in Resources */,
+				BA10515A1F257BC300AF9E59 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		4F6DCFB8BE9E7803AC97553E /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-GankJiZhongYing/Pods-GankJiZhongYing-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A0EE6161A4081099CB358A3E /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		FDA98A9F47B5C6CC954EA6D0 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-GankJiZhongYing/Pods-GankJiZhongYing-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		BA10514D1F257BC300AF9E59 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BA1051861F25959A00AF9E59 /* CLHNavBar.swift in Sources */,
+				BA1051811F258DD900AF9E59 /* CLHBaseViewController.swift in Sources */,
+				BA10517D1F258CB800AF9E59 /* CLHGankViewController.swift in Sources */,
+				BA10517F1F258CBF00AF9E59 /* CLHMineViewController.swift in Sources */,
+				BA1051891F2596CC00AF9E59 /* CLH+UIView.swift in Sources */,
+				BA1051941F25D90400AF9E59 /* CLHNetworking.swift in Sources */,
+				BA1051981F25DFE100AF9E59 /* CLHHomeGroupModel.swift in Sources */,
+				BA1051841F25937200AF9E59 /* CLHHeaderIView.swift in Sources */,
+				BA1051791F258ADE00AF9E59 /* CLHTabBarViewController.swift in Sources */,
+				BA10517B1F258CAB00AF9E59 /* CLHHomeViewController.swift in Sources */,
+				BA10518D1F2597AF00AF9E59 /* CLHExtension.swift in Sources */,
+				BA1051911F25C5E500AF9E59 /* CLHHomeCell.swift in Sources */,
+				BA1051551F257BC300AF9E59 /* AppDelegate.swift in Sources */,
+				BA10518F1F2599B700AF9E59 /* CLHSearchView.swift in Sources */,
+				BA10519A1F25DFF000AF9E59 /* CLHHomeModel.swift in Sources */,
+				BA1051771F2588C000AF9E59 /* CLHConfig.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		BA1051581F257BC300AF9E59 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				BA1051591F257BC300AF9E59 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		BA10515D1F257BC300AF9E59 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				BA10515E1F257BC300AF9E59 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		BA1051611F257BC300AF9E59 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		BA1051621F257BC300AF9E59 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		BA1051641F257BC300AF9E59 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = CC8A1286430E7F8BE9F086F4 /* Pods-GankJiZhongYing.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = GankJiZhongYing/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = AnICoo1.GankJiZhongYing;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "GankJiZhongYing/CLHGank-Bridge.h";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		BA1051651F257BC300AF9E59 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C3CB42EC9D36ED5870B4A7D7 /* Pods-GankJiZhongYing.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = GankJiZhongYing/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = AnICoo1.GankJiZhongYing;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "GankJiZhongYing/CLHGank-Bridge.h";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		BA10514C1F257BC300AF9E59 /* Build configuration list for PBXProject "GankJiZhongYing" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BA1051611F257BC300AF9E59 /* Debug */,
+				BA1051621F257BC300AF9E59 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BA1051631F257BC300AF9E59 /* Build configuration list for PBXNativeTarget "GankJiZhongYing" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BA1051641F257BC300AF9E59 /* Debug */,
+				BA1051651F257BC300AF9E59 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = BA1051491F257BC300AF9E59 /* Project object */;
+}
