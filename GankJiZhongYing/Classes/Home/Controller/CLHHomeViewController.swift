@@ -54,7 +54,7 @@ class CLHHomeViewController: CLHBaseViewController {
     
     //初始化UI
     func setUpUI() {
-        
+        self.automaticallyAdjustsScrollViewInsets = false
         view.addSubview(tableView)
         view.addSubview(navBar)
     }
@@ -63,7 +63,7 @@ class CLHHomeViewController: CLHBaseViewController {
 
 extension CLHHomeViewController: UITableViewDelegate, UITableViewDataSource{
     func numberOfSections(in tableView: UITableView) -> Int {
-        return dataArray.count
+        return 1
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -72,19 +72,25 @@ extension CLHHomeViewController: UITableViewDelegate, UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell: CLHHomeCell = tableView.dequeueReusableCell(withIdentifier: "homeCell", for: indexPath) as! CLHHomeCell
-        cell.backgroundColor = .red
-        cell.textLabel?.text = "xxxx"
+//        cell.backgroundColor = .red
+        let model = CLHHomeModel(id: "x", desc: "hello world   hello world hello world hello world", publishedAt: "x", type: "xx", author: "AnICoo1", url: "xx")
+        cell.homeGank = model
+        cell.indexPath = indexPath
+        //全文按钮点击回调事件
+        cell.moreButtonClickHandler = { [unowned self] (indexPath: IndexPath) in
+            
+        }
         return cell
     }
-    /*
+    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        
+        return 200.0
     }
-    
+    /*
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         
     }
