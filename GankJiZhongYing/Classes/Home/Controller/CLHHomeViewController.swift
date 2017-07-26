@@ -13,6 +13,12 @@ class CLHHomeViewController: CLHBaseViewController {
     
     fileprivate var dataArray: [CLHHomeGroupModel] = [CLHHomeGroupModel]()
     
+    var model: CLHHomeModel = {
+        let model = CLHHomeModel(id: "x", desc: "hello world   hello world hello world hello world", publishedAt: "x", type: "xx", author: "AnICoo1", url: "xx")
+        return model
+    }()
+    
+    
     fileprivate lazy var navBar: CLHNavBar = {
         let navB = CLHNavBar(frame:  CGRect(x: 0, y: 0, width: KScreenW, height: 64))
         return navB
@@ -73,14 +79,11 @@ extension CLHHomeViewController: UITableViewDelegate, UITableViewDataSource{
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell: CLHHomeCell = tableView.dequeueReusableCell(withIdentifier: "homeCell", for: indexPath) as! CLHHomeCell
 //        cell.backgroundColor = .red
-        let model = CLHHomeModel(id: "x", desc: "hello world   hello world hello world hello world", publishedAt: "x", type: "xx", author: "AnICoo1", url: "xx")
-        cell.homeGank = model
-        print(model)
+        cell.homeGank = self.model
         cell.indexPath = indexPath
         //全文按钮点击回调事件
         cell.moreButtonClickHandler = { [unowned self] (indexPath: IndexPath) in
-            model.isOpen = !model.isOpen
-            print(model.isOpen)
+            self.model.isOpen = !(self.model.isOpen)
             self.tableView.reloadRows(at: [indexPath], with: .fade)
         }
         return cell
