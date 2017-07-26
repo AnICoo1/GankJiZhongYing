@@ -10,9 +10,12 @@ import UIKit
 import Foundation
 
 //MARK: - 屏幕
-let KScreenW = UIScreen.main.bounds.size.width
-let KScreenH = UIScreen.main.bounds.size.height
+let KScreenW: CGFloat = UIScreen.main.bounds.size.width
+let KScreenH: CGFloat = UIScreen.main.bounds.size.height
 let KWindow = UIApplication.shared.keyWindow
+
+let KNavHeight: CGFloat = 64.0
+let KTabHieght: CGFloat = 44.0
 
 //MARK: - 控件高度
 let KStatusBarHeight: CGFloat = 20.0

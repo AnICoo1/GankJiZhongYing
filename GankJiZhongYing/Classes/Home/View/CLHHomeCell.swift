@@ -36,7 +36,7 @@ class CLHHomeCell: UITableViewCell {
                 contentLabel.numberOfLines = 3
             }
             
-            if homeGank.shouldOpen {
+            if homeGank.shouldOpen == false {
                 moreButton.snp.remakeConstraints({ (make) in
                     make.top.equalTo(contentLabel.snp.bottom).offset(0)
                     make.left.equalTo(contentLabel)

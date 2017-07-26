@@ -32,7 +32,7 @@ class CLHHomeModel: NSObject {
     var cellHeight: CGFloat {
         
         if _cellHeight == nil {
-            _cellHeight = lineHeight + nameLabelHeight + dataLabelHeight + margin * 3.0
+            _cellHeight = lineHeight + nameLabelHeight + dataLabelHeight + margin * 5.0
             //获取文字高度
             let descHeight = desc?.boundingRect(with: CGSize(width: KScreenW - 20, height: CGFloat(MAXFLOAT)), options: NSStringDrawingOptions.usesLineFragmentOrigin, attributes: [NSFontAttributeName : UIFont.systemFont(ofSize: 15)], context: nil).size.height
             var finalDescHeight: CGFloat = descHeight!
@@ -40,6 +40,7 @@ class CLHHomeModel: NSObject {
             if descHeight! > UIFont.systemFont(ofSize: 15).lineHeight * 3 {
                 finalDescHeight = UIFont.systemFont(ofSize: 15).lineHeight * 3
                 shouldOpen = true
+                _cellHeight = _cellHeight! + 30.0
             }
             if isOpen {
                 finalDescHeight = descHeight!

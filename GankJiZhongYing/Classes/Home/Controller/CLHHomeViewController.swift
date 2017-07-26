@@ -14,7 +14,7 @@ class CLHHomeViewController: CLHBaseViewController {
     fileprivate var dataArray: [CLHHomeGroupModel] = [CLHHomeGroupModel]()
     
     var model: CLHHomeModel = {
-        let model = CLHHomeModel(id: "x", desc: "hello world   hello world hello world hello worldhello world   hello world hello world hello worldhello world   hello world hello world hello worldhello world   hello world hello world hello worldhello world   hello world hello world hello worldhello world   hello world hello world hello worldhello world   hello world hello world hello world", publishedAt: "x", type: "xx", author: "AnICoo1", url: "xx")
+        let model = CLHHomeModel(id: "x", desc: "hello world   hello world hello world hello worldhello world   ", publishedAt: "x", type: "xx", author: "AnICoo1", url: "xx")
         return model
     }()
     
@@ -94,7 +94,7 @@ extension CLHHomeViewController: UITableViewDelegate, UITableViewDataSource{
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return model.cellHeight
+        return self.model.cellHeight
     }
     /*
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
@@ -110,3 +110,22 @@ extension CLHHomeViewController: UITableViewDelegate, UITableViewDataSource{
     }
  */
 }
+
+extension CLHHomeViewController: UIScrollViewDelegate {
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        let offsetY = scrollView.contentOffset.y
+        
+        let alpha = offsetY / (KScreenH * 0.55 - KNavHeight)
+        
+        if offsetY > 0 {
+            navBar.bgColorAlpha = alpha
+            if alpha >= 1.0 {
+                navBar.showLongSearchView()
+            }
+        } else{
+            navBar.bgColorAlpha = 0.001
+            navBar.showShortSearchView()
+        }
+    }
+}
+

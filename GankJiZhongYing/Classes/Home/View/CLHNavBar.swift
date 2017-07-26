@@ -10,19 +10,17 @@ import UIKit
 
 class CLHNavBar: UINavigationBar {
     
-    
-    
-    var bgAlpha: CGFloat = 0 {
-        didSet {
-            self.backgroundColor = UIColor.blue.withAlphaComponent(bgAlpha)
-        }
-    }
-    
     lazy var searchView: CLHSearchView = {
         let W: CGFloat = 80
         let searchV = CLHSearchView(frame: CGRect(x: KScreenW - W - 15, y: 27, width: W, height: 30))
         return searchV
     }()
+    
+    var bgColorAlpha: CGFloat = 0 {
+        didSet{
+            self.backgroundColor = UIColorMainBlue.withAlphaComponent(bgColorAlpha)
+        }
+    }
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -47,6 +45,11 @@ class CLHNavBar: UINavigationBar {
     }
     
     func showShortSearchView() {
-        
+        let W: CGFloat = 80
+        UIView.animate(withDuration: 0.5) {
+            self.searchView.frame = CGRect(x: KScreenW - W - 15, y: 27, width: W, height: 30)
+            self.searchView.searchLabel.text = "搜索"
+            self.searchView.searchLabel.sizeToFit()
+        }
     }
 }
