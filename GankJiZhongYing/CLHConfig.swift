@@ -14,14 +14,13 @@ let KScreenW: CGFloat = UIScreen.main.bounds.size.width
 let KScreenH: CGFloat = UIScreen.main.bounds.size.height
 let KWindow = UIApplication.shared.keyWindow
 
-let KNavHeight: CGFloat = 64.0
-let KTabHieght: CGFloat = 44.0
-
 //MARK: - 控件高度
 let KStatusBarHeight: CGFloat = 20.0
 let KTopBarHeight: CGFloat = 44.0
-let KNavBarHeight: CGFloat = 64.0
+let KNavHeight: CGFloat = 64.0
+let KTabHieght: CGFloat = 44.0
 let KBottomBarHeight: CGFloat = 49.0
+
 //MARK: - 颜色
 let UIColorMainBG = RGBColor(r: 239, g: 239, b: 245, alpha: 1)
 let UIColorTextLightGray = RGBColor(r: 153, g: 153, b: 153, alpha: 1)

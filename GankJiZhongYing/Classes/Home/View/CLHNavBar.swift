@@ -8,7 +8,7 @@
 
 import UIKit
 
-class CLHNavBar: UINavigationBar {
+class CLHNavBar: UIView {
     
     lazy var searchView: CLHSearchView = {
         let W: CGFloat = 80
@@ -24,16 +24,12 @@ class CLHNavBar: UINavigationBar {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
+        self.backgroundColor = .clear
         addSubview(searchView)
     }
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
-    }
-    
-    
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        print("click this")
     }
     
     func showLongSearchView() {

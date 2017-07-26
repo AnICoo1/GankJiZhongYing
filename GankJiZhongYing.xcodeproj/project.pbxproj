@@ -18,7 +18,7 @@
 		BA10517D1F258CB800AF9E59 /* CLHGankViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA10517C1F258CB800AF9E59 /* CLHGankViewController.swift */; };
 		BA10517F1F258CBF00AF9E59 /* CLHMineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA10517E1F258CBF00AF9E59 /* CLHMineViewController.swift */; };
 		BA1051811F258DD900AF9E59 /* CLHBaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA1051801F258DD900AF9E59 /* CLHBaseViewController.swift */; };
-		BA1051841F25937200AF9E59 /* CLHHeaderIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA1051831F25937200AF9E59 /* CLHHeaderIView.swift */; };
+		BA1051841F25937200AF9E59 /* CLHHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA1051831F25937200AF9E59 /* CLHHeaderView.swift */; };
 		BA1051861F25959A00AF9E59 /* CLHNavBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA1051851F25959A00AF9E59 /* CLHNavBar.swift */; };
 		BA1051891F2596CC00AF9E59 /* CLH+UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA1051881F2596CC00AF9E59 /* CLH+UIView.swift */; };
 		BA10518D1F2597AF00AF9E59 /* CLHExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA10518C1F2597AF00AF9E59 /* CLHExtension.swift */; };
@@ -44,7 +44,7 @@
 		BA10517E1F258CBF00AF9E59 /* CLHMineViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CLHMineViewController.swift; sourceTree = "<group>"; };
 		BA1051801F258DD900AF9E59 /* CLHBaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CLHBaseViewController.swift; sourceTree = "<group>"; };
 		BA1051821F25930800AF9E59 /* CLHGank-Bridge.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CLHGank-Bridge.h"; sourceTree = "<group>"; };
-		BA1051831F25937200AF9E59 /* CLHHeaderIView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CLHHeaderIView.swift; sourceTree = "<group>"; };
+		BA1051831F25937200AF9E59 /* CLHHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CLHHeaderView.swift; sourceTree = "<group>"; };
 		BA1051851F25959A00AF9E59 /* CLHNavBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CLHNavBar.swift; sourceTree = "<group>"; };
 		BA1051881F2596CC00AF9E59 /* CLH+UIView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CLH+UIView.swift"; sourceTree = "<group>"; };
 		BA10518C1F2597AF00AF9E59 /* CLHExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CLHExtension.swift; sourceTree = "<group>"; };
@@ -196,7 +196,7 @@
 		BA10516E1F2587CF00AF9E59 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				BA1051831F25937200AF9E59 /* CLHHeaderIView.swift */,
+				BA1051831F25937200AF9E59 /* CLHHeaderView.swift */,
 				BA1051851F25959A00AF9E59 /* CLHNavBar.swift */,
 				BA10518E1F2599B700AF9E59 /* CLHSearchView.swift */,
 				BA1051901F25C5E500AF9E59 /* CLHHomeCell.swift */,
@@ -407,7 +407,7 @@
 				BA1051891F2596CC00AF9E59 /* CLH+UIView.swift in Sources */,
 				BA1051941F25D90400AF9E59 /* CLHNetworking.swift in Sources */,
 				BA1051981F25DFE100AF9E59 /* CLHHomeGroupModel.swift in Sources */,
-				BA1051841F25937200AF9E59 /* CLHHeaderIView.swift in Sources */,
+				BA1051841F25937200AF9E59 /* CLHHeaderView.swift in Sources */,
 				BA1051791F258ADE00AF9E59 /* CLHTabBarViewController.swift in Sources */,
 				BA10517B1F258CAB00AF9E59 /* CLHHomeViewController.swift in Sources */,
 				BA10518D1F2597AF00AF9E59 /* CLHExtension.swift in Sources */,

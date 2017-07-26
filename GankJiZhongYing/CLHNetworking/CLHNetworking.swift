@@ -18,15 +18,15 @@ class CLHNetworking: NSObject {
     /// 请求首页数据
     static func loadHomeRequest(date: String, success: @escaping Success, failure: @escaping Failure) {
         let url = baseURL + "day/\(date)"
-        RequestData(url, success: { (result: Any) in
+        requestData(url, success: { (result: Any) in
             print(result)
             let dicts = JSON(result)
             var datas = [CLHHomeGroupModel]()
             
             for dict in dicts["category"].arrayValue {
                 let groupTitle = dict.stringValue
-                //let groupModel = CLHHomeGroupModel(dict: dicts["results"], key: groupTitle)
-                //datas.append(groupModel)
+                let groupModel = CLHHomeGroupModel(dict: dicts["results"], key: groupTitle)
+                datas.append(groupModel)
             }
             
             // 缓存首页数据
@@ -39,8 +39,20 @@ class CLHNetworking: NSObject {
         }
     }
     
+    // 请求发过干货日期数据
+    static func loadDateRequest(success: @escaping Success, failure: @escaping Failure) {
+        let url = baseURL + "day/history"
+        
+        requestData(url, success: { (result: Any) in
+            let json = result as! [String: Any]
+            guard let dateArray = json["results"] else { return }
+            success(dateArray)
+        }) { (error: Error) in
+            failure(error)
+        }
+    }
     
-     static func RequestData(_ url: String, method: HTTPMethod = .get, encoding: ParameterEncoding = URLEncoding.default, parameters: Parameters? = nil, headers: HTTPHeaders? = nil, success: @escaping Success, failure: @escaping Failure) {
+     static func requestData(_ url: String, method: HTTPMethod = .get, encoding: ParameterEncoding = URLEncoding.default, parameters: Parameters? = nil, headers: HTTPHeaders? = nil, success: @escaping Success, failure: @escaping Failure) {
         Alamofire.request(url, method: method, parameters: parameters).responseJSON { (response) in
             switch response.result {
             case .success:

@@ -36,9 +36,9 @@ class CLHSearchView: UIView {
     }
     
     func setUpAll() {
-        self.layer.cornerRadius = 5
+        self.layer.cornerRadius = 15
         self.layer.masksToBounds = true
-        self.backgroundColor = UIColorMainBlue
+        self.backgroundColor = UIColorTextBlue
         self.addSubview(searchImage)
         self.addSubview(searchLabel)
 //        searchLabel.textColor = .white

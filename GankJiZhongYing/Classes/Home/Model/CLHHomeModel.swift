@@ -10,8 +10,8 @@ import UIKit
 import SwiftyJSON
 
 let lineHeight: CGFloat = 1
-let nameLabelHeight: CGFloat  = 10
-let dataLabelHeight: CGFloat  = 10
+let nameLabelHeight: CGFloat  = 15
+let dataLabelHeight: CGFloat  = 15
 let margin: CGFloat  = 8
 
 class CLHHomeModel: NSObject {
@@ -31,24 +31,25 @@ class CLHHomeModel: NSObject {
     
     var cellHeight: CGFloat {
         
+        
         if _cellHeight == nil {
-            _cellHeight = lineHeight + nameLabelHeight + dataLabelHeight + margin * 5.0
+            _cellHeight = lineHeight + nameLabelHeight + margin
             //获取文字高度
-            let descHeight = desc?.boundingRect(with: CGSize(width: KScreenW - 20, height: CGFloat(MAXFLOAT)), options: NSStringDrawingOptions.usesLineFragmentOrigin, attributes: [NSFontAttributeName : UIFont.systemFont(ofSize: 15)], context: nil).size.height
+            let descHeight = desc?.boundingRect(with: CGSize(width: KScreenW - 20.0, height: CGFloat(MAXFLOAT)), options: NSStringDrawingOptions.usesLineFragmentOrigin, attributes: [NSFontAttributeName : UIFont.systemFont(ofSize: 15.0)], context: nil).size.height
             var finalDescHeight: CGFloat = descHeight!
             //如果超出三行，全文按钮显示
-            if descHeight! > UIFont.systemFont(ofSize: 15).lineHeight * 3 {
-                finalDescHeight = UIFont.systemFont(ofSize: 15).lineHeight * 3
+            if descHeight! > UIFont.systemFont(ofSize: 15.0).lineHeight * 3 {
+                finalDescHeight = UIFont.systemFont(ofSize: 15.0).lineHeight * 3
                 shouldOpen = true
-                _cellHeight = _cellHeight! + 30.0
             }
             if isOpen {
                 finalDescHeight = descHeight!
             }
             
-            _cellHeight = _cellHeight! + finalDescHeight
+            _cellHeight = _cellHeight! + finalDescHeight + margin
+            _cellHeight = _cellHeight! + dataLabelHeight + margin + 8
         }
-        return _cellHeight!
+        return _cellHeight! + 20.0
     }
     convenience  init(dict: JSON) {
         self.init()
@@ -64,7 +65,7 @@ class CLHHomeModel: NSObject {
                 self.url = subJson.string
             case "type":
                 self.type = subJson.string
-            case "":
+            case "who":
                 self.author = subJson.string
             default: break
             }
