@@ -46,6 +46,7 @@ class CLHHomeCell: UITableViewCell {
         let lineV = UIView()
         lineV.backgroundColor = UIColorLine
         self.contentView.addSubview(lineV)
+        print("test")
         return lineV
     }()
     

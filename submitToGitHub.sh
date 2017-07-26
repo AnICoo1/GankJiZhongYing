@@ -12,3 +12,8 @@ git status
 git commit -m "全文展开按钮逻辑修改"
 git pull
 git push
+git add *
+git status
+git commit -m "试"
+git pull
+git push
