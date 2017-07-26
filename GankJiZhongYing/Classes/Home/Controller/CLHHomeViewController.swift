@@ -17,6 +17,7 @@ class CLHHomeViewController: CLHBaseViewController {
     
     fileprivate lazy var navBar: CLHNavBar = {
         let navB = CLHNavBar(frame:  CGRect(x: 0, y: 0, width: KScreenW, height: 64))
+        navB.searchView.locationVC = self
         return navB
     }()
     

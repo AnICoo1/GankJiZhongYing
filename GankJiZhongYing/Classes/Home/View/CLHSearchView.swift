@@ -10,7 +10,8 @@ import UIKit
 import SnapKit
 
 class CLHSearchView: UIView {
-
+    
+    weak var locationVC : UIViewController?
     
     var searchLabel: UILabel = {
         let label = UILabel()
@@ -54,7 +55,10 @@ class CLHSearchView: UIView {
     }
     
     func showSearchVC() {
-        
+        print("click search")
+        let searchVC = CLHSearchViewController()
+        let nav = UINavigationController(rootViewController: searchVC)
+        locationVC?.present(nav, animated: true, completion: nil)
     }
     
 }
