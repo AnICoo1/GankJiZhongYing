@@ -30,10 +30,10 @@ class CLHHomeCell: UITableViewCell {
             print(homeGank.isOpen)
             if homeGank.isOpen {
                 moreButton.setTitle("收起", for: .normal)
-                contentLabel.numberOfLines = 3
+                contentLabel.numberOfLines = 0
             } else {
                 moreButton.setTitle("全文", for: .normal)
-                contentLabel.numberOfLines = 0
+                contentLabel.numberOfLines = 3
             }
             
             dataButton.setTitle(homeGank.publishedAt, for: .normal)

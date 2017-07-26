@@ -14,7 +14,7 @@ class CLHHomeViewController: CLHBaseViewController {
     fileprivate var dataArray: [CLHHomeGroupModel] = [CLHHomeGroupModel]()
     
     var model: CLHHomeModel = {
-        let model = CLHHomeModel(id: "x", desc: "hello world   hello world hello world hello world", publishedAt: "x", type: "xx", author: "AnICoo1", url: "xx")
+        let model = CLHHomeModel(id: "x", desc: "hello world   hello world hello world hello worldhello world   hello world hello world hello worldhello world   hello world hello world hello worldhello world   hello world hello world hello worldhello world   hello world hello world hello worldhello world   hello world hello world hello worldhello world   hello world hello world hello world", publishedAt: "x", type: "xx", author: "AnICoo1", url: "xx")
         return model
     }()
     
