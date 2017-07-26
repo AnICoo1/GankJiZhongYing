@@ -41,7 +41,6 @@ class CLHSearchView: UIView {
         self.backgroundColor = UIColorTextBlue
         self.addSubview(searchImage)
         self.addSubview(searchLabel)
-//        searchLabel.textColor = .white
         searchImage.snp.makeConstraints { (make) in
             make.centerY.equalToSuperview()
             make.left.equalTo(self).offset(5)
