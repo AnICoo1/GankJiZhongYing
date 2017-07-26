@@ -15,5 +15,8 @@ git push
 git add *
 git status
 git commit -m "试"
+git add *
+git status
+git commit -m "全文按钮显示逻辑"
 git pull
 git push

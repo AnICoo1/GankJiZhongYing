@@ -30,6 +30,7 @@ class CLHHomeModel: NSObject {
     var _cellHeight: CGFloat?
     
     var cellHeight: CGFloat {
+        
         if _cellHeight == nil {
             _cellHeight = lineHeight + nameLabelHeight + dataLabelHeight + margin * 3.0
             //获取文字高度

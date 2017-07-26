@@ -22,18 +22,27 @@ class CLHHomeCell: UITableViewCell {
         }
     }
     
+    
     var homeGank: CLHHomeModel! {
         didSet{
             nameButton.setTitle(homeGank.author, for: .normal)
             contentLabel.text = homeGank.desc
             
-            print(homeGank.isOpen)
             if homeGank.isOpen {
                 moreButton.setTitle("收起", for: .normal)
                 contentLabel.numberOfLines = 0
             } else {
                 moreButton.setTitle("全文", for: .normal)
                 contentLabel.numberOfLines = 3
+            }
+            
+            if homeGank.shouldOpen {
+                moreButton.snp.remakeConstraints({ (make) in
+                    make.top.equalTo(contentLabel.snp.bottom).offset(0)
+                    make.left.equalTo(contentLabel)
+                    make.height.equalTo(0)
+                    make.width.equalTo(0)
+                })
             }
             
             dataButton.setTitle(homeGank.publishedAt, for: .normal)
@@ -46,7 +55,6 @@ class CLHHomeCell: UITableViewCell {
         let lineV = UIView()
         lineV.backgroundColor = UIColorLine
         self.contentView.addSubview(lineV)
-        print("test")
         return lineV
     }()
     
@@ -142,6 +150,7 @@ class CLHHomeCell: UITableViewCell {
             make.top.equalTo(moreButton.snp.bottom).offset(8)
             make.height.equalTo(15)
         }
+        
     }
     
     func moreButtonClick(button: UIButton) {
