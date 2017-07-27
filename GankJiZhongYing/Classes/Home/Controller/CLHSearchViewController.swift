@@ -11,6 +11,9 @@ import UIKit
 class CLHSearchViewController: CLHBaseViewController {
 
     
+    var historySearchTags = [String]()
+    
+    
     var searchView: CLHSubSearchView = {
        let searchV = CLHSubSearchView()
         return searchV
@@ -35,19 +38,33 @@ class CLHSearchViewController: CLHBaseViewController {
         let tableView = UITableView(frame: CGRect(x: 0, y: 0, width: KScreenW, height: KScreenH), style: .plain)
         tableView.delegate = self
         tableView.dataSource = self
-        tableView.isHidden = true
         tableView.separatorInset = .zero
+        tableView.isHidden = true
         tableView.tableFooterView = UIView()
-        tableView.rowHeight = 60
+        tableView.contentInset.bottom = KBottomBarHeight
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "searchCell")
         return tableView
     }()
     
+    fileprivate lazy var historyScrollView: UIScrollView = {
+        let historyV = UIScrollView(frame: CGRect(x: 0, y: KNavHeight, width: KScreenW, height: KScreenH - KNavHeight))
+        return historyV
+    }()
+    
+    fileprivate lazy var historySearch: CLHSearchListView = {
+       let searchListV = CLHSearchListView(frame: CGRect(x: 0, y: 0, width: KScreenW, height: 0))
+        self.historySearchTags.append("hello")
+        self.historySearchTags.append("helloiahwufaihfiahw")
+        self.historySearchTags.append("hellouwaiufaiwfaiwgfaigwfiagwfiga")
+        searchListV.addSomeTags(tags: self.historySearchTags)
+        return searchListV
+    }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setUpUI()
         view.backgroundColor = .white
+        
     }
 
     func setUpUI() {
@@ -84,13 +101,17 @@ class CLHSearchViewController: CLHBaseViewController {
             make.bottom.equalTo(self.view).offset(0)
         }
         
-        
+        historyScrollView.contentSize = CGSize(width: KScreenW, height: self.historySearch.Height)
+        self.view.addSubview(historyScrollView)
+        historyScrollView.addSubview(historySearch)
         
     }
-    
+    //取消按钮点击
     func cancelButtonClick() {
         print("cancelButtonClick")
+        self.dismiss(animated: true, completion: nil)
     }
+    
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
