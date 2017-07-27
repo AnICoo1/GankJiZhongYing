@@ -15,7 +15,20 @@ typealias Failure = (Error) -> (Void)
 
 class CLHNetworking: NSObject {
 
-    /// 请求首页数据
+    // 请求发过干货日期数据
+    static func loadDateRequest(success: @escaping Success, failure: @escaping Failure) {
+        let url = baseURL + "day/history"
+        
+        requestData(url, success: { (result: Any) in
+            let json = result as! [String: Any]
+            guard let dateArray = json["results"] else { return }
+            success(dateArray)
+        }) { (error: Error) in
+            failure(error)
+        }
+    }
+    
+    // 请求首页数据
     static func loadHomeRequest(date: String, success: @escaping Success, failure: @escaping Failure) {
         let url = baseURL + "day/\(date)"
         requestData(url, success: { (result: Any) in
@@ -39,14 +52,20 @@ class CLHNetworking: NSObject {
         }
     }
     
-    // 请求发过干货日期数据
-    static func loadDateRequest(success: @escaping Success, failure: @escaping Failure) {
-        let url = baseURL + "day/history"
+    // 请求搜索数据
+    static func loadSearchRequest(text: String, page: Int, success: @escaping Success, failure: @escaping Failure) {
+        let url = baseURL + "search/query/\(text)/category/all/count/20/page/\(page)"
         
         requestData(url, success: { (result: Any) in
-            let json = result as! [String: Any]
-            guard let dateArray = json["results"] else { return }
-            success(dateArray)
+            let dicts = JSON(result)
+            let datas: [CLHSearchGankModel]
+            
+            datas = dicts["results"].arrayValue.map({ dict in
+                CLHSearchGankModel(dict: dict)
+            })
+            
+            success(datas)
+            
         }) { (error: Error) in
             failure(error)
         }

@@ -221,6 +221,7 @@ extension CLHSearchListView{
     }
     //清除按钮点击
     func cleanButtonClick(button: UIButton) {
+        
         if cleanButtonClickHandler != nil {
             cleanButtonClickHandler!()
         }

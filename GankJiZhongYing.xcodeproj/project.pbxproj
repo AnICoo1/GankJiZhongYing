@@ -31,6 +31,9 @@
 		BA521DEC1F2980B90034ECFE /* CLHSearchTagButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA521DEB1F2980B90034ECFE /* CLHSearchTagButton.swift */; };
 		BA521DEE1F29CBEC0034ECFE /* CLH+NSObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA521DED1F29CBEC0034ECFE /* CLH+NSObject.swift */; };
 		BA521DF01F29D1340034ECFE /* CLHHeaderSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA521DEF1F29D1340034ECFE /* CLHHeaderSectionView.swift */; };
+		BA521DF21F29DDE90034ECFE /* CLHBaseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA521DF11F29DDE90034ECFE /* CLHBaseModel.swift */; };
+		BA521DF41F29DE520034ECFE /* CLHSearchGankModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA521DF31F29DE520034ECFE /* CLHSearchGankModel.swift */; };
+		BA521DF61F29E0800034ECFE /* CLHSearchCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA521DF51F29E0800034ECFE /* CLHSearchCell.swift */; };
 		BACCAF6B1F286BA60057E9AD /* CLHSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BACCAF6A1F286BA60057E9AD /* CLHSearchViewController.swift */; };
 		BACCAF6D1F2871B00057E9AD /* CLHSubSearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BACCAF6C1F2871B00057E9AD /* CLHSubSearchView.swift */; };
 /* End PBXBuildFile section */
@@ -63,6 +66,9 @@
 		BA521DEB1F2980B90034ECFE /* CLHSearchTagButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CLHSearchTagButton.swift; sourceTree = "<group>"; };
 		BA521DED1F29CBEC0034ECFE /* CLH+NSObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CLH+NSObject.swift"; sourceTree = "<group>"; };
 		BA521DEF1F29D1340034ECFE /* CLHHeaderSectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CLHHeaderSectionView.swift; sourceTree = "<group>"; };
+		BA521DF11F29DDE90034ECFE /* CLHBaseModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CLHBaseModel.swift; path = ../Classes/Home/Model/CLHBaseModel.swift; sourceTree = "<group>"; };
+		BA521DF31F29DE520034ECFE /* CLHSearchGankModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CLHSearchGankModel.swift; sourceTree = "<group>"; };
+		BA521DF51F29E0800034ECFE /* CLHSearchCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CLHSearchCell.swift; sourceTree = "<group>"; };
 		BACCAF6A1F286BA60057E9AD /* CLHSearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CLHSearchViewController.swift; sourceTree = "<group>"; };
 		BACCAF6C1F2871B00057E9AD /* CLHSubSearchView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CLHSubSearchView.swift; sourceTree = "<group>"; };
 		C3CB42EC9D36ED5870B4A7D7 /* Pods-GankJiZhongYing.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GankJiZhongYing.release.xcconfig"; path = "Pods/Target Support Files/Pods-GankJiZhongYing/Pods-GankJiZhongYing.release.xcconfig"; sourceTree = "<group>"; };
@@ -202,6 +208,7 @@
 			children = (
 				BA1051971F25DFE100AF9E59 /* CLHHomeGroupModel.swift */,
 				BA1051991F25DFF000AF9E59 /* CLHHomeModel.swift */,
+				BA521DF31F29DE520034ECFE /* CLHSearchGankModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -217,6 +224,7 @@
 				BACCAF6C1F2871B00057E9AD /* CLHSubSearchView.swift */,
 				BA521DE91F2971940034ECFE /* CLHSearchListView.swift */,
 				BA521DEB1F2980B90034ECFE /* CLHSearchTagButton.swift */,
+				BA521DF51F29E0800034ECFE /* CLHSearchCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -258,6 +266,7 @@
 			children = (
 				BA1051781F258ADE00AF9E59 /* CLHTabBarViewController.swift */,
 				BA1051801F258DD900AF9E59 /* CLHBaseViewController.swift */,
+				BA521DF11F29DDE90034ECFE /* CLHBaseModel.swift */,
 			);
 			path = Base;
 			sourceTree = "<group>";
@@ -420,7 +429,10 @@
 			files = (
 				BA1051861F25959A00AF9E59 /* CLHNavBar.swift in Sources */,
 				BA1051811F258DD900AF9E59 /* CLHBaseViewController.swift in Sources */,
+				BA521DF41F29DE520034ECFE /* CLHSearchGankModel.swift in Sources */,
+				BA521DF21F29DDE90034ECFE /* CLHBaseModel.swift in Sources */,
 				BA521DEE1F29CBEC0034ECFE /* CLH+NSObject.swift in Sources */,
+				BA521DF61F29E0800034ECFE /* CLHSearchCell.swift in Sources */,
 				BA10517D1F258CB800AF9E59 /* CLHGankViewController.swift in Sources */,
 				BA10517F1F258CBF00AF9E59 /* CLHMineViewController.swift in Sources */,
 				BA1051891F2596CC00AF9E59 /* CLH+UIView.swift in Sources */,

@@ -15,6 +15,9 @@ class CLHSearchViewController: CLHBaseViewController {
     
     var historySearchTags = [String]()
     
+    var lastSearchText: String!
+    
+    fileprivate var dataArray: [CLHSearchGankModel] = [CLHSearchGankModel]()
     
     var searchView: CLHSubSearchView = {
        let searchV = CLHSubSearchView()
@@ -44,7 +47,8 @@ class CLHSearchViewController: CLHBaseViewController {
         tableView.isHidden = true
         tableView.tableFooterView = UIView()
         tableView.contentInset.bottom = KBottomBarHeight
-        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "searchCell")
+        tableView.rowHeight = 60
+        tableView.register(CLHSearchCell.self, forCellReuseIdentifier: "searchCell")
         return tableView
     }()
     
@@ -148,28 +152,49 @@ class CLHSearchViewController: CLHBaseViewController {
     }
 }
 
-
-extension CLHSearchViewController: UITableViewDelegate, UITableViewDataSource{
-    func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
+//MARK: - 网络请求
+extension CLHSearchViewController {
+    func loadRequest(text: String) {
+        self.lastSearchText = text
+        CLHNetworking.loadSearchRequest(text: text, page: 1, success: { (result) -> (Void) in
+            if self.lastSearchText != text {
+                return
+            }
+            
+            guard let datasArray = result as? [CLHSearchGankModel] else { return }
+//            print(result)
+            self.tableView.isHidden = false
+            self.historyScrollView.isHidden = true
+            
+            self.dataArray = datasArray
+            self.tableView.reloadData()
+        }) { (error) -> (Void) in
+            if self.lastSearchText != text { return }
+            print(error)
+        }
     }
+}
+//MARK: - UITableViewDelegate, UITableViewDataSource
+extension CLHSearchViewController: UITableViewDelegate, UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
+        print(dataArray.count)
+        return dataArray.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "searchCell", for: indexPath)
-        cell.textLabel?.text = "hello world"
+        let cell = tableView.dequeueReusableCell(withIdentifier: "searchCell", for: indexPath) as! CLHSearchCell
+        cell.searchModel = dataArray[indexPath.row]
+//        print(dataArray[indexPath.row])
         return cell
     }
 }
-
+//MARK: - UITextFieldDelegate
 extension CLHSearchViewController: UITextFieldDelegate{
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         guard let text = textField.text else { return true }
         if text.unicodeScalars.count > 0 {
-//            loadRequest(WithText: text)
+            loadRequest(text: text)
             self.addHistorySearchTag(text: text)
             self.view.endEditing(true)
         }

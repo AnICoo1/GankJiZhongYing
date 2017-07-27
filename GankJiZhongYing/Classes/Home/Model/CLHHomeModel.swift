@@ -14,15 +14,8 @@ let nameLabelHeight: CGFloat  = 15
 let dataLabelHeight: CGFloat  = 15
 let margin: CGFloat  = 8
 
-class CLHHomeModel: NSObject {
+class CLHHomeModel: CLHBaseModel {
 
-    //属性
-    var id: String?
-    var desc: String?
-    var publishedAt: String?
-    var type: String?
-    var author: String?
-    var url: String?
     
     var shouldOpen: Bool = false
     var isOpen: Bool = false
@@ -74,16 +67,6 @@ class CLHHomeModel: NSObject {
         // 时间处理
         let time = self.publishedAt! as NSString
         self.publishedAt = time.substring(to: 10) as String
-    }
-    
-    convenience init(id: String, desc: String, publishedAt: String, type: String, author: String, url: String) {
-        self.init()
-        self.id = id
-        self.desc = desc
-        self.publishedAt = publishedAt
-        self.type = type
-        self.author = author
-        self.url = url
     }
     
 }
