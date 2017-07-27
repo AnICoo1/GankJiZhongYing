@@ -76,11 +76,15 @@ class CLHSearchViewController: CLHBaseViewController {
         
     }
 
-    func setUpUI() {
+    fileprivate func setUpUI() {
         self.view.addSubview(searchView)
         self.view.addSubview(cancelButton)
         self.view.addSubview(bottomLineView)
         self.view.addSubview(tableView)
+        
+        searchView.inputTextField.becomeFirstResponder()
+        searchView.inputTextField.delegate = self
+        
         
         searchView.snp.makeConstraints { (make) in
             make.top.equalTo(self.view).offset(27)
@@ -121,6 +125,13 @@ class CLHSearchViewController: CLHBaseViewController {
         self.dismiss(animated: true, completion: nil)
     }
     
+    func addHistorySearchTag(text: String) {
+        for title in historySearchTags {
+            if title == text { return }
+        }
+        self.historySearchTags.insert(text, at: 0)
+        self.historySearch.addTag(tagTitle: text)
+    }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -137,6 +148,7 @@ class CLHSearchViewController: CLHBaseViewController {
     }
 }
 
+
 extension CLHSearchViewController: UITableViewDelegate, UITableViewDataSource{
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
@@ -152,3 +164,20 @@ extension CLHSearchViewController: UITableViewDelegate, UITableViewDataSource{
         return cell
     }
 }
+
+extension CLHSearchViewController: UITextFieldDelegate{
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        guard let text = textField.text else { return true }
+        if text.unicodeScalars.count > 0 {
+//            loadRequest(WithText: text)
+            self.addHistorySearchTag(text: text)
+            self.view.endEditing(true)
+        }
+        return true
+    }
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        self.tableView.isHidden = true
+        self.historyScrollView.isHidden = false
+    }
+}
+
