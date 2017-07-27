@@ -30,6 +30,7 @@
 		BA521DEA1F2971940034ECFE /* CLHSearchListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA521DE91F2971940034ECFE /* CLHSearchListView.swift */; };
 		BA521DEC1F2980B90034ECFE /* CLHSearchTagButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA521DEB1F2980B90034ECFE /* CLHSearchTagButton.swift */; };
 		BA521DEE1F29CBEC0034ECFE /* CLH+NSObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA521DED1F29CBEC0034ECFE /* CLH+NSObject.swift */; };
+		BA521DF01F29D1340034ECFE /* CLHHeaderSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA521DEF1F29D1340034ECFE /* CLHHeaderSectionView.swift */; };
 		BACCAF6B1F286BA60057E9AD /* CLHSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BACCAF6A1F286BA60057E9AD /* CLHSearchViewController.swift */; };
 		BACCAF6D1F2871B00057E9AD /* CLHSubSearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BACCAF6C1F2871B00057E9AD /* CLHSubSearchView.swift */; };
 /* End PBXBuildFile section */
@@ -61,6 +62,7 @@
 		BA521DE91F2971940034ECFE /* CLHSearchListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CLHSearchListView.swift; sourceTree = "<group>"; };
 		BA521DEB1F2980B90034ECFE /* CLHSearchTagButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CLHSearchTagButton.swift; sourceTree = "<group>"; };
 		BA521DED1F29CBEC0034ECFE /* CLH+NSObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CLH+NSObject.swift"; sourceTree = "<group>"; };
+		BA521DEF1F29D1340034ECFE /* CLHHeaderSectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CLHHeaderSectionView.swift; sourceTree = "<group>"; };
 		BACCAF6A1F286BA60057E9AD /* CLHSearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CLHSearchViewController.swift; sourceTree = "<group>"; };
 		BACCAF6C1F2871B00057E9AD /* CLHSubSearchView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CLHSubSearchView.swift; sourceTree = "<group>"; };
 		C3CB42EC9D36ED5870B4A7D7 /* Pods-GankJiZhongYing.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GankJiZhongYing.release.xcconfig"; path = "Pods/Target Support Files/Pods-GankJiZhongYing/Pods-GankJiZhongYing.release.xcconfig"; sourceTree = "<group>"; };
@@ -208,6 +210,7 @@
 			isa = PBXGroup;
 			children = (
 				BA1051831F25937200AF9E59 /* CLHHeaderView.swift */,
+				BA521DEF1F29D1340034ECFE /* CLHHeaderSectionView.swift */,
 				BA1051851F25959A00AF9E59 /* CLHNavBar.swift */,
 				BA10518E1F2599B700AF9E59 /* CLHSearchView.swift */,
 				BA1051901F25C5E500AF9E59 /* CLHHomeCell.swift */,
@@ -430,6 +433,7 @@
 				BA1051791F258ADE00AF9E59 /* CLHTabBarViewController.swift in Sources */,
 				BA10517B1F258CAB00AF9E59 /* CLHHomeViewController.swift in Sources */,
 				BA10518D1F2597AF00AF9E59 /* CLHExtension.swift in Sources */,
+				BA521DF01F29D1340034ECFE /* CLHHeaderSectionView.swift in Sources */,
 				BA1051911F25C5E500AF9E59 /* CLHHomeCell.swift in Sources */,
 				BA1051551F257BC300AF9E59 /* AppDelegate.swift in Sources */,
 				BA10518F1F2599B700AF9E59 /* CLHSearchView.swift in Sources */,

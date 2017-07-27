@@ -145,19 +145,21 @@ extension CLHHomeViewController: UITableViewDelegate, UITableViewDataSource{
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return dataArray[indexPath.section].homeGanks[indexPath.row].cellHeight
     }
-    /*
+    
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        
+        return 25.0
     }
     
     func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
-        
+        return 0.001
     }
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        
+        let headerSectionV = CLHHeaderSectionView()
+        headerSectionV.titleLabel.text = dataArray[section].groupTitle
+        return headerSectionV
     }
- */
+ 
 }
 
 extension CLHHomeViewController: UIScrollViewDelegate {
