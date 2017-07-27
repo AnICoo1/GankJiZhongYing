@@ -14,7 +14,7 @@ class CLHSearchListView: UIView {
     var tagButtonArray = [CLHSearchTagButton]()
     var tagButtontitleArray = [String]()
     
-    
+    var cleanButtonClickHandler: ((Void) -> Void)?
     
     fileprivate var nowHeight :  CGFloat {
         get{
@@ -34,6 +34,7 @@ class CLHSearchListView: UIView {
     var cleanButton: UIButton = {
         let btn = UIButton(type: .custom)
         btn.setImage(UIImage(named: "icon_clean"), for: .normal)
+        btn.addTarget(self, action: #selector(cleanButtonClick(button:)), for: .touchUpInside)
         return btn
     }()
     
@@ -122,7 +123,9 @@ extension CLHSearchListView{
     }
     //删除全部按钮
     func deleteAllTag() {
-        
+        tagButtonArray.removeAll()
+        tagButtontitleArray.removeAll()
+        self.isHidden = true
     }
     //更新按钮的tag
     func updateTag() {
@@ -206,14 +209,21 @@ extension CLHSearchListView{
     func enterEditModel(button: CLHSearchTagButton) {
         button.setImage(UIImage(named: "close_button"), for: .normal)
     }
-    
+    //tag被点击
     func tagButtonClick(button: CLHSearchTagButton) {
 //        deleteTag(button: button)
+        //判断是不是长按之后的点击
         guard let image = button.imageView?.image else {
             print("click button")
             return
         }
         deleteTag(button: button)
+    }
+    //清除按钮点击
+    func cleanButtonClick(button: UIButton) {
+        if cleanButtonClickHandler != nil {
+            cleanButtonClickHandler!()
+        }
     }
 }
 

@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import MJRefresh
+import SVProgressHUD
 
 class CLHSearchViewController: CLHBaseViewController {
 
@@ -57,6 +59,13 @@ class CLHSearchViewController: CLHBaseViewController {
         self.historySearchTags.append("helloiahwufaihfiahw")
         self.historySearchTags.append("hellouwaiufaiwfaiwgfaigwfiagwfiga")
         searchListV.addSomeTags(tags: self.historySearchTags)
+        searchListV.cleanButtonClickHandler = { [unowned self] in
+            self.showAlertController(locationVC: self, title: "清除历史记录", message: "", confrimClouse: { (action) in
+                self.historySearch.deleteAllTag()
+                self.historySearchTags.removeAll()
+//                NSKeyedArchiver.archiveRootObject(self.recentSearchTitles, toFile: "saveRecentSearchTitles".cachesDir())
+            }) {_ in}
+        }
         return searchListV
     }()
     

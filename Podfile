@@ -7,6 +7,8 @@ target 'GankJiZhongYing' do
     pod 'SnapKit'
     pod 'SwiftyJSON'
     pod 'SDWebImage'
+    pod 'SVProgressHUD'
+    pod 'MJRefresh'
 
 end
 

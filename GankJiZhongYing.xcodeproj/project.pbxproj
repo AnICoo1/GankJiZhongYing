@@ -29,6 +29,7 @@
 		BA10519A1F25DFF000AF9E59 /* CLHHomeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA1051991F25DFF000AF9E59 /* CLHHomeModel.swift */; };
 		BA521DEA1F2971940034ECFE /* CLHSearchListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA521DE91F2971940034ECFE /* CLHSearchListView.swift */; };
 		BA521DEC1F2980B90034ECFE /* CLHSearchTagButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA521DEB1F2980B90034ECFE /* CLHSearchTagButton.swift */; };
+		BA521DEE1F29CBEC0034ECFE /* CLH+NSObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA521DED1F29CBEC0034ECFE /* CLH+NSObject.swift */; };
 		BACCAF6B1F286BA60057E9AD /* CLHSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BACCAF6A1F286BA60057E9AD /* CLHSearchViewController.swift */; };
 		BACCAF6D1F2871B00057E9AD /* CLHSubSearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BACCAF6C1F2871B00057E9AD /* CLHSubSearchView.swift */; };
 /* End PBXBuildFile section */
@@ -59,6 +60,7 @@
 		BA1051991F25DFF000AF9E59 /* CLHHomeModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CLHHomeModel.swift; sourceTree = "<group>"; };
 		BA521DE91F2971940034ECFE /* CLHSearchListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CLHSearchListView.swift; sourceTree = "<group>"; };
 		BA521DEB1F2980B90034ECFE /* CLHSearchTagButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CLHSearchTagButton.swift; sourceTree = "<group>"; };
+		BA521DED1F29CBEC0034ECFE /* CLH+NSObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CLH+NSObject.swift"; sourceTree = "<group>"; };
 		BACCAF6A1F286BA60057E9AD /* CLHSearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CLHSearchViewController.swift; sourceTree = "<group>"; };
 		BACCAF6C1F2871B00057E9AD /* CLHSubSearchView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CLHSubSearchView.swift; sourceTree = "<group>"; };
 		C3CB42EC9D36ED5870B4A7D7 /* Pods-GankJiZhongYing.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GankJiZhongYing.release.xcconfig"; path = "Pods/Target Support Files/Pods-GankJiZhongYing/Pods-GankJiZhongYing.release.xcconfig"; sourceTree = "<group>"; };
@@ -123,11 +125,11 @@
 				BA1051921F25D8F200AF9E59 /* CLHNetworking */,
 				BA1051541F257BC300AF9E59 /* AppDelegate.swift */,
 				BA1051761F2588C000AF9E59 /* CLHConfig.swift */,
+				BA1051821F25930800AF9E59 /* CLHGank-Bridge.h */,
 				BA1051581F257BC300AF9E59 /* Main.storyboard */,
 				BA10515B1F257BC300AF9E59 /* Assets.xcassets */,
 				BA10515D1F257BC300AF9E59 /* LaunchScreen.storyboard */,
 				BA1051601F257BC300AF9E59 /* Info.plist */,
-				BA1051821F25930800AF9E59 /* CLHGank-Bridge.h */,
 			);
 			path = GankJiZhongYing;
 			sourceTree = "<group>";
@@ -276,6 +278,7 @@
 			children = (
 				BA1051881F2596CC00AF9E59 /* CLH+UIView.swift */,
 				BA10518C1F2597AF00AF9E59 /* CLHExtension.swift */,
+				BA521DED1F29CBEC0034ECFE /* CLH+NSObject.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -414,6 +417,7 @@
 			files = (
 				BA1051861F25959A00AF9E59 /* CLHNavBar.swift in Sources */,
 				BA1051811F258DD900AF9E59 /* CLHBaseViewController.swift in Sources */,
+				BA521DEE1F29CBEC0034ECFE /* CLH+NSObject.swift in Sources */,
 				BA10517D1F258CB800AF9E59 /* CLHGankViewController.swift in Sources */,
 				BA10517F1F258CBF00AF9E59 /* CLHMineViewController.swift in Sources */,
 				BA1051891F2596CC00AF9E59 /* CLH+UIView.swift in Sources */,
