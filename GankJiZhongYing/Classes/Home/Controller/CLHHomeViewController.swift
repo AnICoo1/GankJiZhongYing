@@ -140,12 +140,11 @@ extension CLHHomeViewController: UITableViewDelegate, UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let model = dataArray[indexPath.section].homeGanks[indexPath.row]
-        
-        let webView = CLHHomeWebViewController()
-        //webView.urlString = model.url
-        //webView.gankModel = model
-        webView.hidesBottomBarWhenPushed = true
-        self.navigationController?.pushViewController(webView, animated: true)
+        let webVC = CLHHomeWebViewController()
+        webVC.webURL = model.url
+        webVC.gankModel = model
+        webVC.hidesBottomBarWhenPushed = true
+        self.navigationController?.pushViewController(webVC, animated: true)
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {

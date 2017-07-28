@@ -189,6 +189,14 @@ extension CLHSearchViewController: UITableViewDelegate, UITableViewDataSource{
         cell.selectionStyle = .none
         return cell
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let model = self.dataArray[indexPath.row]
+        let webVC = CLHHomeWebViewController()
+        webVC.webURL = model.url
+        webVC.gankModel = model
+        self.navigationController?.pushViewController(webVC, animated: true)
+    }
 }
 //MARK: - UITextFieldDelegate
 extension CLHSearchViewController: UITextFieldDelegate{

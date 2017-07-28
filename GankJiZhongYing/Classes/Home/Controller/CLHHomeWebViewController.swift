@@ -10,10 +10,13 @@ import UIKit
 
 class CLHHomeWebViewController: CLHBaseWebViewController {
 
+    
+    var gankModel: CLHBaseModel?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        setUpUI()
+        //setUpUI()
         
         
     }
