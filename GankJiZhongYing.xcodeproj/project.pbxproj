@@ -36,6 +36,9 @@
 		BA521DF61F29E0800034ECFE /* CLHSearchCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA521DF51F29E0800034ECFE /* CLHSearchCell.swift */; };
 		BACCAF6B1F286BA60057E9AD /* CLHSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BACCAF6A1F286BA60057E9AD /* CLHSearchViewController.swift */; };
 		BACCAF6D1F2871B00057E9AD /* CLHSubSearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BACCAF6C1F2871B00057E9AD /* CLHSubSearchView.swift */; };
+		BAE64A6F1F2AC816001F02BC /* CLHLoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAE64A6E1F2AC816001F02BC /* CLHLoadingView.swift */; };
+		BAE64A711F2AC9D2001F02BC /* CLHBaseWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAE64A701F2AC9D2001F02BC /* CLHBaseWebViewController.swift */; };
+		BAE64A731F2AD544001F02BC /* CLHHomeWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAE64A721F2AD544001F02BC /* CLHHomeWebViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -71,6 +74,9 @@
 		BA521DF51F29E0800034ECFE /* CLHSearchCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CLHSearchCell.swift; sourceTree = "<group>"; };
 		BACCAF6A1F286BA60057E9AD /* CLHSearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CLHSearchViewController.swift; sourceTree = "<group>"; };
 		BACCAF6C1F2871B00057E9AD /* CLHSubSearchView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CLHSubSearchView.swift; sourceTree = "<group>"; };
+		BAE64A6E1F2AC816001F02BC /* CLHLoadingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CLHLoadingView.swift; sourceTree = "<group>"; };
+		BAE64A701F2AC9D2001F02BC /* CLHBaseWebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CLHBaseWebViewController.swift; sourceTree = "<group>"; };
+		BAE64A721F2AD544001F02BC /* CLHHomeWebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CLHHomeWebViewController.swift; sourceTree = "<group>"; };
 		C3CB42EC9D36ED5870B4A7D7 /* Pods-GankJiZhongYing.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GankJiZhongYing.release.xcconfig"; path = "Pods/Target Support Files/Pods-GankJiZhongYing/Pods-GankJiZhongYing.release.xcconfig"; sourceTree = "<group>"; };
 		CC8A1286430E7F8BE9F086F4 /* Pods-GankJiZhongYing.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GankJiZhongYing.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GankJiZhongYing/Pods-GankJiZhongYing.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -125,6 +131,7 @@
 		BA1051531F257BC300AF9E59 /* GankJiZhongYing */ = {
 			isa = PBXGroup;
 			children = (
+				BAE64A6D1F2AC805001F02BC /* Tools */,
 				BA1051731F2587D600AF9E59 /* Base */,
 				BA1051661F2587CF00AF9E59 /* Classes */,
 				BA1051751F2587FB00AF9E59 /* Main */,
@@ -199,6 +206,7 @@
 			children = (
 				BA10517A1F258CAB00AF9E59 /* CLHHomeViewController.swift */,
 				BACCAF6A1F286BA60057E9AD /* CLHSearchViewController.swift */,
+				BAE64A721F2AD544001F02BC /* CLHHomeWebViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -266,6 +274,7 @@
 			children = (
 				BA1051781F258ADE00AF9E59 /* CLHTabBarViewController.swift */,
 				BA1051801F258DD900AF9E59 /* CLHBaseViewController.swift */,
+				BAE64A701F2AC9D2001F02BC /* CLHBaseWebViewController.swift */,
 				BA521DF11F29DDE90034ECFE /* CLHBaseModel.swift */,
 			);
 			path = Base;
@@ -301,6 +310,14 @@
 				BA1051931F25D90400AF9E59 /* CLHNetworking.swift */,
 			);
 			path = CLHNetworking;
+			sourceTree = "<group>";
+		};
+		BAE64A6D1F2AC805001F02BC /* Tools */ = {
+			isa = PBXGroup;
+			children = (
+				BAE64A6E1F2AC816001F02BC /* CLHLoadingView.swift */,
+			);
+			path = Tools;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -429,13 +446,16 @@
 			files = (
 				BA1051861F25959A00AF9E59 /* CLHNavBar.swift in Sources */,
 				BA1051811F258DD900AF9E59 /* CLHBaseViewController.swift in Sources */,
+				BAE64A731F2AD544001F02BC /* CLHHomeWebViewController.swift in Sources */,
 				BA521DF41F29DE520034ECFE /* CLHSearchGankModel.swift in Sources */,
 				BA521DF21F29DDE90034ECFE /* CLHBaseModel.swift in Sources */,
 				BA521DEE1F29CBEC0034ECFE /* CLH+NSObject.swift in Sources */,
+				BAE64A711F2AC9D2001F02BC /* CLHBaseWebViewController.swift in Sources */,
 				BA521DF61F29E0800034ECFE /* CLHSearchCell.swift in Sources */,
 				BA10517D1F258CB800AF9E59 /* CLHGankViewController.swift in Sources */,
 				BA10517F1F258CBF00AF9E59 /* CLHMineViewController.swift in Sources */,
 				BA1051891F2596CC00AF9E59 /* CLH+UIView.swift in Sources */,
+				BAE64A6F1F2AC816001F02BC /* CLHLoadingView.swift in Sources */,
 				BA1051941F25D90400AF9E59 /* CLHNetworking.swift in Sources */,
 				BA1051981F25DFE100AF9E59 /* CLHHomeGroupModel.swift in Sources */,
 				BA521DEA1F2971940034ECFE /* CLHSearchListView.swift in Sources */,

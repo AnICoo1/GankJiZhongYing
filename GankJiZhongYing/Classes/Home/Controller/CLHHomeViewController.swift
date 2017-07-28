@@ -126,7 +126,7 @@ extension CLHHomeViewController: UITableViewDelegate, UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell: CLHHomeCell = tableView.dequeueReusableCell(withIdentifier: "homeCell", for: indexPath) as! CLHHomeCell
-//        cell.backgroundColor = .red
+        cell.selectionStyle = .none
         cell.homeGank = dataArray[indexPath.section].homeGanks[indexPath.row]
         cell.indexPath = indexPath
         //全文按钮点击回调事件
@@ -139,7 +139,13 @@ extension CLHHomeViewController: UITableViewDelegate, UITableViewDataSource{
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let model = dataArray[indexPath.section].homeGanks[indexPath.row]
         
+        let webView = CLHHomeWebViewController()
+        //webView.urlString = model.url
+        //webView.gankModel = model
+        webView.hidesBottomBarWhenPushed = true
+        self.navigationController?.pushViewController(webView, animated: true)
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {

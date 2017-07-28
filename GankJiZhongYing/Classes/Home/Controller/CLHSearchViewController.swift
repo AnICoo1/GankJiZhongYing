@@ -156,11 +156,11 @@ class CLHSearchViewController: CLHBaseViewController {
 extension CLHSearchViewController {
     func loadRequest(text: String) {
         self.lastSearchText = text
+        SVProgressHUD.show(withStatus: "正在搜索干货")
         CLHNetworking.loadSearchRequest(text: text, page: 1, success: { (result) -> (Void) in
             if self.lastSearchText != text {
                 return
             }
-            
             guard let datasArray = result as? [CLHSearchGankModel] else { return }
 //            print(result)
             self.tableView.isHidden = false
@@ -168,6 +168,7 @@ extension CLHSearchViewController {
             
             self.dataArray = datasArray
             self.tableView.reloadData()
+            SVProgressHUD.dismiss()
         }) { (error) -> (Void) in
             if self.lastSearchText != text { return }
             print(error)
@@ -185,7 +186,7 @@ extension CLHSearchViewController: UITableViewDelegate, UITableViewDataSource{
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "searchCell", for: indexPath) as! CLHSearchCell
         cell.searchModel = dataArray[indexPath.row]
-//        print(dataArray[indexPath.row])
+        cell.selectionStyle = .none
         return cell
     }
 }
