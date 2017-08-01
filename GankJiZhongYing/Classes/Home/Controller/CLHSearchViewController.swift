@@ -61,15 +61,18 @@ class CLHSearchViewController: CLHBaseViewController {
     
     fileprivate lazy var historySearch: CLHSearchListView = {
        let searchListV = CLHSearchListView(frame: CGRect(x: 0, y: 0, width: KScreenW, height: 0))
-        self.historySearchTags.append("hello")
-        self.historySearchTags.append("helloiahwufaihfiahw")
-        self.historySearchTags.append("hellouwaiufaiwfaiwgfaigwfiagwfiga")
         searchListV.addSomeTags(tags: self.historySearchTags)
+        
+        searchListV.updateTagsHandler = { [unowned self] (titles) in
+            self.historySearchTags = titles
+            NSKeyedArchiver.archiveRootObject(self.historySearchTags, toFile: "saveRecentSearchTitles".cachesDir())
+        }
+        
         searchListV.cleanButtonClickHandler = { [unowned self] in
             self.showAlertController(locationVC: self, title: "清除历史记录", message: "", confrimClouse: { (action) in
                 self.historySearch.deleteAllTag()
                 self.historySearchTags.removeAll()
-//                NSKeyedArchiver.archiveRootObject(self.recentSearchTitles, toFile: "saveRecentSearchTitles".cachesDir())
+                NSKeyedArchiver.archiveRootObject(self.historySearchTags, toFile: "saveRecentSearchTitles".cachesDir())
             }) {_ in}
         }
 
@@ -77,6 +80,7 @@ class CLHSearchViewController: CLHBaseViewController {
             self.historySearchTags = titles
             self.searchView.inputTextField.text = self.historySearchTags[0]
             self.loadRequest(text: self.historySearchTags[0])
+            NSKeyedArchiver.archiveRootObject(self.historySearchTags, toFile: "saveRecentSearchTitles".cachesDir())
         }
         
         return searchListV
@@ -97,7 +101,10 @@ class CLHSearchViewController: CLHBaseViewController {
         
         searchView.inputTextField.becomeFirstResponder()
         searchView.inputTextField.delegate = self
-        
+        let saveRecentSearchTitles = NSKeyedUnarchiver.unarchiveObject(withFile: "saveRecentSearchTitles".cachesDir()) as? [String]
+        if saveRecentSearchTitles != nil {
+            historySearchTags = saveRecentSearchTitles!
+        }
         
         searchView.snp.makeConstraints { (make) in
             make.top.equalTo(self.view).offset(27)
@@ -174,6 +181,7 @@ class CLHSearchViewController: CLHBaseViewController {
         }
         self.historySearchTags.insert(text, at: 0)
         self.historySearch.addTag(tagTitle: text)
+        NSKeyedArchiver.archiveRootObject(self.historySearchTags, toFile: "saveRecentSearchTitles".cachesDir())
     }
     
     override func viewWillAppear(_ animated: Bool) {

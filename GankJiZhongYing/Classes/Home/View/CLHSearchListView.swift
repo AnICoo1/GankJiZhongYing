@@ -18,6 +18,8 @@ class CLHSearchListView: UIView {
     
     var tagButtonClickHandler: (([String]) -> (Void))?
     
+    var updateTagsHandler: (([String]) -> (Void))?
+    
     fileprivate var nowHeight :  CGFloat {
         get{
             return (tagButtonArray.count <= 0 ? 30.0 : ((tagButtonArray.last?.MaxY)! + margin))
@@ -126,12 +128,18 @@ extension CLHSearchListView{
                 self.Height = self.nowHeight
             }
         })
+        
+        if updateTagsHandler != nil {
+            updateTagsHandler!(tagButtontitleArray)
+        }
+        
     }
     //删除全部按钮
     func deleteAllTag() {
         tagButtonArray.removeAll()
         tagButtontitleArray.removeAll()
         self.isHidden = true
+        NSKeyedArchiver.archiveRootObject(self.tagButtontitleArray, toFile: "saveRecentSearchTitles".cachesDir())
     }
     //更新按钮的tag
     func updateTag() {

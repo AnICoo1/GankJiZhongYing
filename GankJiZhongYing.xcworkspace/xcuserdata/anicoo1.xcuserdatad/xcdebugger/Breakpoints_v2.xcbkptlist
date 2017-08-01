@@ -20,11 +20,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "GankJiZhongYing/Classes/Home/View/CLHSearchListView.swift"
-            timestampString = "523246683.969913"
+            timestampString = "523249284.683126"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "232"
-            endingLineNumber = "232"
+            startingLineNumber = "240"
+            endingLineNumber = "240"
             landmarkName = "cleanButtonClick(button:)"
             landmarkType = "7">
          </BreakpointContent>
