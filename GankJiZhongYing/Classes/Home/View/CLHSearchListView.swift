@@ -16,6 +16,8 @@ class CLHSearchListView: UIView {
     
     var cleanButtonClickHandler: ((Void) -> Void)?
     
+    var tagButtonClickHandler: (([String]) -> (Void))?
+    
     fileprivate var nowHeight :  CGFloat {
         get{
             return (tagButtonArray.count <= 0 ? 30.0 : ((tagButtonArray.last?.MaxY)! + margin))
@@ -35,6 +37,7 @@ class CLHSearchListView: UIView {
         let btn = UIButton(type: .custom)
         btn.setImage(UIImage(named: "icon_clean"), for: .normal)
         btn.addTarget(self, action: #selector(cleanButtonClick(button:)), for: .touchUpInside)
+        btn.sizeToFit()
         return btn
     }()
     
@@ -42,6 +45,9 @@ class CLHSearchListView: UIView {
         super.init(frame: frame)
 //        self.backgroundColor = .blue
         setUpUI()
+        print(listLabel.frame)
+//        listLabel.isHidden = true
+        print(cleanButton.frame)
     }
     
     func setUpUI() {
@@ -54,7 +60,7 @@ class CLHSearchListView: UIView {
         }
         
         cleanButton.snp.makeConstraints { (make) in
-            make.top.equalTo(self).offset(10)
+            make.top.equalTo(listLabel.snp.top)
             make.right.equalTo(self).offset(-10)
             make.width.equalTo(20)
             make.height.equalTo(20)
@@ -214,7 +220,9 @@ extension CLHSearchListView{
 //        deleteTag(button: button)
         //判断是不是长按之后的点击
         guard let image = button.imageView?.image else {
-            print("click button")
+            deleteTag(button: button)
+            addTag(tagTitle: (button.titleLabel?.text)!)
+            tagButtonClickHandler!(tagButtontitleArray)
             return
         }
         deleteTag(button: button)

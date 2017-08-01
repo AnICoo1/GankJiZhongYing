@@ -17,6 +17,8 @@ class CLHSearchViewController: CLHBaseViewController {
     
     var lastSearchText: String!
     
+    var currentPage: Int = 1
+    
     fileprivate var dataArray: [CLHSearchGankModel] = [CLHSearchGankModel]()
     
     var searchView: CLHSubSearchView = {
@@ -70,6 +72,13 @@ class CLHSearchViewController: CLHBaseViewController {
 //                NSKeyedArchiver.archiveRootObject(self.recentSearchTitles, toFile: "saveRecentSearchTitles".cachesDir())
             }) {_ in}
         }
+
+        searchListV.tagButtonClickHandler = { [unowned self] (titles) in
+            self.historySearchTags = titles
+            self.searchView.inputTextField.text = self.historySearchTags[0]
+            self.loadRequest(text: self.historySearchTags[0])
+        }
+        
         return searchListV
     }()
     
@@ -77,7 +86,7 @@ class CLHSearchViewController: CLHBaseViewController {
         super.viewDidLoad()
         setUpUI()
         view.backgroundColor = .white
-        
+        setUpFooterRefresh()
     }
 
     fileprivate func setUpUI() {
@@ -123,6 +132,36 @@ class CLHSearchViewController: CLHBaseViewController {
         historyScrollView.addSubview(historySearch)
         
     }
+    //设置底部刷新控件
+    func setUpFooterRefresh() {
+        let footerRefresh = MJRefreshBackNormalFooter.init(refreshingTarget: self, refreshingAction: #selector(loadMoreDataRequest))
+        footerRefresh?.setTitle("上拉加载更多", for: .idle)
+        footerRefresh?.setTitle("释放立即加载", for: .pulling)
+        footerRefresh?.setTitle("干货加载中", for: .refreshing)
+        tableView.mj_footer = footerRefresh
+    }
+    
+    //底部刷新请求
+    func loadMoreDataRequest() {
+        let currentPage = self.currentPage + 1
+        guard let text = self.searchView.inputTextField.text else { return }
+        
+        CLHNetworking.loadSearchRequest(text: text, page: currentPage, success: { (result) in
+            guard let datas = result as? [CLHSearchGankModel] else {
+                self.tableView.mj_footer.endRefreshing()
+                return
+            }
+            
+            self.dataArray.append(contentsOf: datas)
+            self.tableView.reloadData()
+            self.currentPage = currentPage
+            self.tableView.mj_footer.endRefreshing()
+            
+        }) { (error) in
+            self.tableView.mj_footer.endRefreshing()
+        }
+    }
+    
     //取消按钮点击
     func cancelButtonClick() {
         print("cancelButtonClick")

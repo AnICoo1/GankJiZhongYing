@@ -43,7 +43,6 @@ class CLHHomeViewController: CLHBaseViewController {
         super.viewDidLoad()
         self.view.backgroundColor = .white
         setUpUI()
-        
         sendRequest()
     }
     

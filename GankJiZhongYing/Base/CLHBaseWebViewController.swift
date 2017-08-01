@@ -39,7 +39,6 @@ class CLHBaseWebViewController: CLHBaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setUpUI()
-        
         loadWithURLString(urlString: webURL)
     }
 
