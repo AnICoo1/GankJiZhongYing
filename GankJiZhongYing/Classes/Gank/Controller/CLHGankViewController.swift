@@ -8,28 +8,49 @@
 
 import UIKit
 
-class CLHGankViewController: CLHBaseViewController {
+class CLHGankViewController: CLHTopChooseViewController {
 
+    
+    var focusTagArray: [String] = [String]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        setUpAll()
+        setUpUI()
     }
+}
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+//MARK: - UI
+extension CLHGankViewController {
+    fileprivate func setUpAll() {
+        setUpTopView()
+        focusTagArray = ["干货", "iOS", "前端", "Android", "拓展资源", "视频"]
+        // 从本地读取频道列表
+        let saveFocusTagArray = NSKeyedUnarchiver.unarchiveObject(withFile: "saveFocusTagArray".cachesDir()) as? [String]
+        if saveFocusTagArray != nil {
+            focusTagArray = saveFocusTagArray!
+        }
+        setUpChildViewController(tagArray: focusTagArray)
+        
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    fileprivate func setUpTopView() {
+        buttonTitleFont = 14.0
+        buttonSelectedLineColor = UIColorTextBlue
+        buttonTitleSelectColor = UIColorTextBlue
+        buttonTitleColor = UIColorTextLightGray
+        titleViewHeight = 35.0
+        titleViewBackgroudColor = UIColor(red: 1.0, green: 1.0, blue: 1.0, alpha: 0.95)
     }
-    */
-
+    
+    fileprivate func setUpChildViewController(tagArray: [String]) {
+        focusTagArray.removeAll()
+        for tag in tagArray {
+            let vc = CLHTagViewController()
+            vc.title = tag
+            addChildViewController(vc)
+            focusTagArray.append(tag)
+        }
+        NSKeyedArchiver.archiveRootObject(focusTagArray, toFile: "saveFocusTagArray".cachesDir())
+    }
 }
