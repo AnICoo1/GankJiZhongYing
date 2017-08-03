@@ -9,5 +9,9 @@
 import UIKit
 
 class CLHGankModel: CLHBaseModel {
-    
+
+    /// 是否展开
+    var isOpen: Bool = false
+    /// 是否应该展示全文按钮
+    var isShouldOpen: Bool = false
 }

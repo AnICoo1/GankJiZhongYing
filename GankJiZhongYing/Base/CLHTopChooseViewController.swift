@@ -192,6 +192,7 @@ extension CLHTopChooseViewController {
     fileprivate func contentChange(To: NSInteger) {
         let VC = self.childViewControllers[To]
         VC.view.frame = CGRect(x: CGFloat(To) * KScreenW, y: 0, width: KScreenW, height: contentScrollView.bounds.size.height)
+        VC.view.backgroundColor = contentViewBackgroudColor
         contentScrollView.addSubview(VC.view)
         //内容滚动视图滚到相应的位置
         contentScrollView.contentOffset = CGPoint(x: CGFloat(To) * KScreenW, y: 0)

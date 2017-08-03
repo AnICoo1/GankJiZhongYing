@@ -13,10 +13,18 @@ class CLHGankViewController: CLHTopChooseViewController {
     
     var focusTagArray: [String] = [String]()
     
+    var topAddButton: UIButton = {
+        let btn = UIButton(type: .custom)
+        btn.setImage(UIImage(named: "add_button_normal"), for: .normal)
+        btn.backgroundColor = .lightGray
+        return btn
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setUpAll()
         setUpUI()
+        setUpTopButton()
     }
 }
 
@@ -41,13 +49,21 @@ extension CLHGankViewController {
         buttonTitleColor = UIColorTextLightGray
         titleViewHeight = 35.0
         titleViewBackgroudColor = UIColor(red: 1.0, green: 1.0, blue: 1.0, alpha: 0.95)
+        contentViewBackgroudColor = UIColor.lightGray
+    }
+    
+    fileprivate func setUpTopButton() {
+        topAddButton.frame = CGRect(x: KScreenW - self.titleViewHeight, y: self.titleScrollView.Y, width: self.titleViewHeight, height: self.titleViewHeight)
+        view.addSubview(topAddButton)
     }
     
     fileprivate func setUpChildViewController(tagArray: [String]) {
         focusTagArray.removeAll()
         for tag in tagArray {
-            let vc = CLHTagViewController()
+            let vc = CLHTagGankViewController()
             vc.title = tag
+//            vc.view.backgroundColor = UIColor.lightGray
+//            vc.view.backgroundColor = .red
             addChildViewController(vc)
             focusTagArray.append(tag)
         }
