@@ -150,6 +150,7 @@ extension CLHHomeViewController: UITableViewDelegate, UITableViewDataSource{
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        //print("\(indexPath.section).\(indexPath.row): \(dataArray[indexPath.section].homeGanks[indexPath.row].cellHeight)")
         return dataArray[indexPath.section].homeGanks[indexPath.row].cellHeight
     }
     

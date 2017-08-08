@@ -9,6 +9,7 @@ target 'GankJiZhongYing' do
     pod 'SDWebImage'
     pod 'SVProgressHUD'
     pod 'MJRefresh'
+    pod 'FMDB'
 
 end
 

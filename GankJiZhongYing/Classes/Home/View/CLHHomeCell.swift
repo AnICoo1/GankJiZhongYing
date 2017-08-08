@@ -81,6 +81,7 @@ class CLHHomeCell: UITableViewCell {
     lazy var moreButton: UIButton = {
         let btn = UIButton(type: .custom)
         btn.setTitleColor(UIColorTextBlue, for: .normal)
+        btn.titleLabel?.font = UIFont.boldSystemFont(ofSize: 15)
         btn.setTitle("全文", for: .normal)
         btn.contentHorizontalAlignment = .left
         btn.addTarget(self, action: #selector(moreButtonClick(button:)), for: .touchUpInside)
@@ -146,6 +147,7 @@ class CLHHomeCell: UITableViewCell {
     }
     
     func moreButtonClick(button: UIButton) {
+        self.homeGank._cellHeight = nil
         if moreButtonClickHandler != nil {
             moreButtonClickHandler!(self.indexPath)
         }

@@ -8,6 +8,16 @@
 
 import UIKit
 
+let realTag: [String: String] = ["福利" : "福利",
+                                 "Android": "Android",
+                                 "iOS" : "iOS",
+                                 "视频" : "休息视频",
+                                 "拓展资源" : "拓展资源",
+                                 "前端" : "前端",
+                                 "干货" : "all",
+                                 "推荐" : "瞎推荐",
+                                 "App" : "App"]
+
 class CLHGankViewController: CLHTopChooseViewController {
 
     
@@ -62,6 +72,7 @@ extension CLHGankViewController {
         for tag in tagArray {
             let vc = CLHTagGankViewController()
             vc.title = tag
+            vc.type = realTag[vc.title!]
 //            vc.view.backgroundColor = UIColor.lightGray
 //            vc.view.backgroundColor = .red
             addChildViewController(vc)

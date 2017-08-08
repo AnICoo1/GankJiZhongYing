@@ -10,7 +10,7 @@ import UIKit
 import SwiftyJSON
 
 
-let cellMargin: CGFloat = 10
+let cellMargin: CGFloat = 20
 
 class CLHGankModel: CLHBaseModel {
 
@@ -27,6 +27,8 @@ class CLHGankModel: CLHBaseModel {
         if _cellHeight == nil {
             _cellHeight = 5
             
+            //_cellHeight = _cellHeight! + 30
+            _cellHeight = _cellHeight! + 10
             // 文字的高度
             let maxSize = CGSize(width: KScreenW - cellMargin * 2, height: CGFloat(MAXFLOAT))
             let descTextH = desc?.boundingRect(with: maxSize, options: NSStringDrawingOptions.usesLineFragmentOrigin, attributes: [NSFontAttributeName : UIFont.systemFont(ofSize: 15)], context: nil).size.height
@@ -40,16 +42,12 @@ class CLHGankModel: CLHBaseModel {
             }
             
             _cellHeight = _cellHeight! + contentTextH + cellMargin
-            
-            if isShouldOpen {
-                _cellHeight = _cellHeight! + 20.0
-            }
             /*
             if images?.count == 1 {
                 
             }
             */
-            _cellHeight = _cellHeight! + 20.0 + margin * 2
+            _cellHeight = _cellHeight! + 30.0 + margin
         }
         return _cellHeight!
     }

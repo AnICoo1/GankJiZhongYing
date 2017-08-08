@@ -13,9 +13,10 @@ class CLHTagGankCell: UITableViewCell {
 
     /// 全文按钮点击
     var moreButtonClickHandler: ((_ indexPath: IndexPath) -> (Void))?
-    var lineView: UIView! = {
+    lazy var lineView: UIView = {
         let lineV = UIView()
         lineV.backgroundColor = UIColorLine
+        self.contentView.addSubview(lineV)
         return lineV
     }()
     //首行没有上面的分割线
@@ -34,10 +35,10 @@ class CLHTagGankCell: UITableViewCell {
             moreButton.isHidden = !gankModel.isShouldOpen
             if gankModel.isOpen {
                 contentLabel.numberOfLines = 0
-                moreButton.setTitle("全文", for: .normal)
+                moreButton.setTitle("收起", for: .normal)
             } else {
                 contentLabel.numberOfLines = 3
-                moreButton.setTitle("收起", for: .normal)
+                moreButton.setTitle("全文", for: .normal)
             }
             if gankModel.isShouldOpen == false {
                 moreButton.snp.remakeConstraints({ (make) in
@@ -51,21 +52,23 @@ class CLHTagGankCell: UITableViewCell {
         }
     }
     /// 内容
-    var contentLabel: UILabel = {
+    lazy var contentLabel: UILabel = {
         let label = UILabel()
         label.numberOfLines = 0
-        label.font = UIFont.boldSystemFont(ofSize: 15)
+        label.font = UIFont.boldSystemFont(ofSize: 15.0)
         label.textColor = UIColor.black
+        self.contentView.addSubview(label)
         return label
     }()
     /// 收起按钮
-    var moreButton: UIButton = {
+    lazy var moreButton: UIButton = {
         let btn = UIButton(type: .custom)
         btn.setTitle("全文", for: .normal)
         btn.titleLabel?.font = UIFont.systemFont(ofSize: 15)
         btn.titleLabel?.textAlignment = .left
         btn.setTitleColor(UIColorMainBlue, for: .normal)
         btn.addTarget(self, action: #selector(moreButtonClick(button:)), for: .touchUpInside)
+        self.contentView.addSubview(btn)
         return btn
     }()
     /// 图片
@@ -74,9 +77,10 @@ class CLHTagGankCell: UITableViewCell {
         return middleV
     }()
     /// 底部信息栏
-    var bottomView: CLHBottomView = {
+    lazy var bottomView: CLHBottomView = {
         let bottomV = CLHBottomView()
 //        bottomV.backgroundColor = .red
+        self.contentView.addSubview(bottomV)
         return bottomV
     }()
     
@@ -104,11 +108,11 @@ class CLHTagGankCell: UITableViewCell {
 
 extension CLHTagGankCell {
     fileprivate func setUpAll() {
-        contentView.addSubview(lineView)
-        contentView.addSubview(contentLabel)
-        contentView.addSubview(moreButton)
+        
+        
+//        contentView.addSubview(moreButton)
         contentView.addSubview(photoView)
-        contentView.addSubview(bottomView)
+        
         
         lineView.snp.makeConstraints { (make) in
             make.left.equalTo(self).offset(0)
@@ -132,7 +136,7 @@ extension CLHTagGankCell {
         
         bottomView.snp.makeConstraints { (make) in
             make.left.equalTo(self).offset(20)
-            make.right.equalTo(self).offset(0)
+            make.right.equalTo(self).offset(-20)
             make.bottom.equalTo(self).offset(0)
             make.height.equalTo(30)
         }
@@ -140,6 +144,7 @@ extension CLHTagGankCell {
     }
     
     func moreButtonClick(button: UIButton) {
+        self.gankModel._cellHeight = nil
         if moreButtonClickHandler != nil {
             moreButtonClickHandler!(self.indexPath)
         }

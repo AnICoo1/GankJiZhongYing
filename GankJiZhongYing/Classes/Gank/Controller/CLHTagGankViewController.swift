@@ -32,7 +32,7 @@ class CLHTagGankViewController: CLHBaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.type = "all"
+//        self.type = self.title
         setUpAll()
         loadData()
     }
@@ -110,6 +110,11 @@ extension CLHTagGankViewController: UITableViewDelegate, UITableViewDataSource {
         cell.selectionStyle = .none
         cell.indexPath = indexPath
         cell.gankModel = dataArray[indexPath.row]
+        cell.moreButtonClickHandler = { [unowned self] (indexPath: IndexPath) in
+            let model = self.dataArray[indexPath.row]
+            model.isOpen = !model.isOpen
+            self.tableView.reloadRows(at: [indexPath], with: .fade)
+        }
         return cell
     }
     

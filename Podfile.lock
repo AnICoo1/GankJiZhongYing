@@ -1,5 +1,8 @@
 PODS:
   - Alamofire (4.5.0)
+  - FMDB (2.7.2):
+    - FMDB/standard (= 2.7.2)
+  - FMDB/standard (2.7.2)
   - MJRefresh (3.1.12)
   - SDWebImage (4.0.0):
     - SDWebImage/Core (= 4.0.0)
@@ -10,6 +13,7 @@ PODS:
 
 DEPENDENCIES:
   - Alamofire (~> 4.0)
+  - FMDB
   - MJRefresh
   - SDWebImage
   - SnapKit
@@ -18,12 +22,13 @@ DEPENDENCIES:
 
 SPEC CHECKSUMS:
   Alamofire: f28cdffd29de33a7bfa022cbd63ae95a27fae140
+  FMDB: 6198a90e7b6900cfc046e6bc0ef6ebb7be9236aa
   MJRefresh: b96cdb21c4aa75a7b07654311ab2f315c497e806
   SDWebImage: 76a6348bdc74eb5a55dd08a091ef298e56b55e41
   SnapKit: 1ca44df72cfa543218d177cb8aab029d10d86ea7
   SVProgressHUD: c404a55d78acbeb7ebb78b76d3faf986475a6994
   SwiftyJSON: c2842d878f95482ffceec5709abc3d05680c0220
 
-PODFILE CHECKSUM: 387cd0dfd8be4de38884e9f6cf0e456394498175
+PODFILE CHECKSUM: 6f109a074ff119f2aaa3c99ecabf85338a16f00a
 
 COCOAPODS: 1.2.1
