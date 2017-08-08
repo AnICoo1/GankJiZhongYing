@@ -15,6 +15,59 @@ typealias Failure = (Error) -> (Void)
 
 class CLHNetworking: NSObject {
 
+    
+    static func loadGankRequest(type: String, page: Int, success: @escaping Success, failure: @escaping Failure){
+        let url = baseURL + "data/\(type)/20/\(page)"
+        requestData(url, success: { (result) -> (Void) in
+            print(result)
+            let dict = JSON(result)
+            let datas: [CLHGankModel]
+            // 创建一个组队列
+            let group = DispatchGroup()
+            let urlconfig = URLSessionConfiguration.default
+            urlconfig.timeoutIntervalForRequest = 2
+            urlconfig.timeoutIntervalForResource = 2
+            
+            datas = dict["results"].arrayValue.map({ dict in
+                let model = CLHGankModel(dict: dict)
+                
+                if let images = model.images, model.images?.count == 1 {
+                    let urlString = images.first! + "?imageInfo"
+                    let url = URL(string: urlString)
+                    
+                    let session = URLSession(configuration: urlconfig)
+                    // 当前线程加入组队列
+                    group.enter()
+                    let tast = session.dataTask(with: url!, completionHandler: { (data: Data?, _, error: Error?) in
+                        if let data = data {
+                            let json = JSON(data: data)
+                            if let width = json["width"].object as? CGFloat {
+//                                model.imageW = width
+                            }
+                            if let height = json["height"].object as? CGFloat {
+//                                model.imageH = height
+                            }
+                        }
+                        // 当前线程离开组队列
+                        group.leave()
+                    })
+                    tast.resume()
+                    // 防止内存泄漏
+                    session.finishTasksAndInvalidate()
+                }
+                return model
+            })
+            
+            // 等组队列执行完, 在主线程回调
+            group.notify(queue: DispatchQueue.main, execute: {
+                success(datas)
+            })
+
+        }) { (error) -> (Void) in
+            print(error)
+        }
+    }
+    
     // 请求发过干货日期数据
     static func loadDateRequest(success: @escaping Success, failure: @escaping Failure) {
         let url = baseURL + "day/history"

@@ -13,19 +13,23 @@ class CLHTagGankCell: UITableViewCell {
 
     /// 全文按钮点击
     var moreButtonClickHandler: ((_ indexPath: IndexPath) -> (Void))?
+    var lineView: UIView! = {
+        let lineV = UIView()
+        lineV.backgroundColor = UIColorLine
+        return lineV
+    }()
     //首行没有上面的分割线
     var indexPath: IndexPath! {
         didSet{
-//            self.lineView.isHidden = (indexPath.row == 0)
+            self.lineView.isHidden = (indexPath.row == 0)
         }
     }
     
     var gankModel: CLHGankModel! {
         didSet{
             contentLabel.text = gankModel.desc
-            bottomView.authorButton.setTitle(gankModel.author, for: .normal)
             bottomView.dataButton.setTitle(gankModel.publishedAt, for: .normal)
-            
+            bottomView.authorButton.setTitle(gankModel.author, for: .normal)
             
             moreButton.isHidden = !gankModel.isShouldOpen
             if gankModel.isOpen {
@@ -50,7 +54,7 @@ class CLHTagGankCell: UITableViewCell {
     var contentLabel: UILabel = {
         let label = UILabel()
         label.numberOfLines = 0
-        label.font = UIFont.boldSystemFont(ofSize: 14)
+        label.font = UIFont.boldSystemFont(ofSize: 15)
         label.textColor = UIColor.black
         return label
     }()
@@ -72,6 +76,7 @@ class CLHTagGankCell: UITableViewCell {
     /// 底部信息栏
     var bottomView: CLHBottomView = {
         let bottomV = CLHBottomView()
+//        bottomV.backgroundColor = .red
         return bottomV
     }()
     
@@ -99,14 +104,21 @@ class CLHTagGankCell: UITableViewCell {
 
 extension CLHTagGankCell {
     fileprivate func setUpAll() {
+        contentView.addSubview(lineView)
         contentView.addSubview(contentLabel)
         contentView.addSubview(moreButton)
         contentView.addSubview(photoView)
         contentView.addSubview(bottomView)
         
+        lineView.snp.makeConstraints { (make) in
+            make.left.equalTo(self).offset(0)
+            make.top.equalTo(self).offset(0)
+            make.right.equalTo(self).offset(0)
+            make.height.equalTo(2)
+        }
         
         contentLabel.snp.makeConstraints { (make) in
-            make.top.equalTo(self).offset(10)
+            make.top.equalTo(lineView.snp.bottom).offset(10)
             make.left.equalTo(self).offset(20)
             make.right.equalTo(self).offset(-20)
         }
@@ -119,11 +131,12 @@ extension CLHTagGankCell {
         }
         
         bottomView.snp.makeConstraints { (make) in
-            make.left.equalTo(self).offset(0)
+            make.left.equalTo(self).offset(20)
             make.right.equalTo(self).offset(0)
             make.bottom.equalTo(self).offset(0)
             make.height.equalTo(30)
         }
+        
     }
     
     func moreButtonClick(button: UIButton) {

@@ -42,9 +42,11 @@ class CLHHomeViewController: CLHBaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = .white
+        
         setUpUI()
         sendRequest()
     }
+    
     
     func sendRequest() {
         // 获取发过干货的日期
@@ -138,6 +140,7 @@ extension CLHHomeViewController: UITableViewDelegate, UITableViewDataSource{
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
         let model = dataArray[indexPath.section].homeGanks[indexPath.row]
         let webVC = CLHHomeWebViewController()
         webVC.webURL = model.url

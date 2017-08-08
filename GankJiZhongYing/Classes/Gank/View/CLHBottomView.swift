@@ -10,19 +10,24 @@ import UIKit
 
 class CLHBottomView: UIView {
 
-    var  authorButton: UIButton = {
+    var authorButton: UIButton = {
         let btn = UIButton(type: .custom)
+//        btn.backgroundColor = .red
         btn.setTitleColor(UIColor.lightGray, for: .normal)
         btn.titleLabel?.font = UIFont.boldSystemFont(ofSize: 12.0)
         btn.setImage(UIImage(named: "icon_editor.png"), for: .normal)
+        btn.contentHorizontalAlignment = .left
+       // btn.sizeToFit()
         return btn
     }()
     
-    var  dataButton: UIButton = {
+    var dataButton: UIButton = {
         let btn = UIButton(type: .custom)
+//        btn.backgroundColor = .yellow
         btn.setTitleColor(UIColor.lightGray, for: .normal)
         btn.titleLabel?.font = UIFont.boldSystemFont(ofSize: 12.0)
         btn.setImage(UIImage(named: "icon_time.png"), for: .normal)
+        btn.contentHorizontalAlignment = .left
         return btn
     }()
     
@@ -44,7 +49,7 @@ class CLHBottomView: UIView {
             make.top.equalTo(self).offset(0)
             make.left.equalTo(self).offset(0)
             make.bottom.equalTo(self).offset(0)
-            make.width.equalTo(self.Width * 0.5)
+            make.width.equalTo(100)
         }
         
         authorButton.snp.makeConstraints { (make) in
